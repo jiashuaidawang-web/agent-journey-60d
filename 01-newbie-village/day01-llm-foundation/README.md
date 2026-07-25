@@ -1,87 +1,324 @@
-# Day 1: LLM Foundation
+# Day 1: LLM API / Message / Token / Context / Streaming
 
-## 今日目标
+> **今日目标**: 打通 LLM 调用的4种模式：同步、流式、异步、异步流式
+> **核心问题**: 为什么 Agent 系统必须关心 Token 和 Context？
 
-理解 LLM API 的本质：Prompt、Token、Context Window、Streaming、Temperature。
+---
 
-亲手写出第一个 Python LLM Client。
+## 🎯 今日目标
 
-## 📚 学习清单
+1. 理解 LLM 调用的本质：Message → Context → Model → Response
+2. 掌握4种调用模式：Sync / Stream / Async / Async Stream
+3. 亲手写出4个可运行的 Client
+4. 理解 Token / Context Window / TTFT / TPS
 
-### 理论 (1.5h)
-- [ ] Token 是什么？为什么 Token ≠ Word？
+---
+
+## 📚 必学知识
+
+### 1. Message（消息模型）
+- System Message：角色设定、行为约束
+- User Message：用户输入
+- Assistant Message：模型回复
+- 三者构成一次完整对话
+
+### 2. Token（令牌）
+- LLM 的基本处理单位，≠ 单词，≠ 字
+- 英文：1 token ≈ 4字符 ≈ 0.75单词
+- 中文：1个汉字 ≈ 1-2 tokens
+- Input Token 和 Output Token 分开计费
+
+### 3. Context Window（上下文窗口）
+- 一次请求能处理的最大 Token 数
+- 包含：System + History + User Input + Tool Result + Output
+- 为什么不能无限大？→ 计算量、显存、成本
+
+### 4. Streaming（流式输出）
+- SSE (Server-Sent Events) 协议
+- 逐 token 返回，提升用户体验
+- TTFT（首Token时间）+ TPS（每秒Token数）
+
+### 5. Async（异步调用）
+- Python asyncio
+- 高并发场景必须用异步
+- async def / await / asyncio.run
+
+---
+
+## 🔗 官方资料
+
+| 知识点 | 地址 |
+|--------|------|
+| OpenAI Text Generation | https://platform.openai.com/docs/guides/text-generation |
+| OpenAI API Reference | https://platform.openai.com/docs/api-reference/chat |
+| OpenAI Streaming | https://platform.openai.com/docs/api-reference/streaming |
+| OpenAI Tokenizer | https://platform.openai.com/tokenizer |
+| Python asyncio | https://docs.python.org/3/library/asyncio.html |
+| Python asyncio TaskGroup | https://docs.python.org/3/library/asyncio-task.html#task-groups |
+
+---
+
+## 🧠 学习深度
+
+### 必须掌握（L3）
+- [ ] Message 三元组：System / User / Assistant
+- [ ] Token 是什么？中英文 Token 化区别
 - [ ] Context Window 是什么？为什么有限制？
-- [ ] Streaming vs 普通请求的区别
-- [ ] Temperature / Top-P / Max Tokens 参数含义
-- [ ] System Prompt vs User Prompt vs Assistant Message
+- [ ] 4种调用模式：Sync / Stream / Async / Async Stream
+- [ ] TTFT / TPS / Latency 含义
 
-### 官方文档
-- [ ] OpenAI API Text Generation: https://platform.openai.com/docs/guides/text-generation
-- [ ] OpenAI API Streaming: https://platform.openai.com/docs/api-reference/streaming
-- [ ] OpenAI API Messages Format: https://platform.openai.com/docs/api-reference/messages
+### 只需理解（L2）
+- [ ] SSE 协议原理
+- [ ] HTTP Streaming vs WebSocket
+- [ ] Temperature / Top-P / Max Tokens 参数
 
-### 编码 (3h)
-- [ ] 实现同步调用 (`sync_chat.py`)
-- [ ] 实现流式调用 (`stream_chat.py`)
-- [ ] 实现模型配置抽象 (`model_config.py`)
+### 今天不深入（后面会讲）
+- [ ] Transformer 架构
+- [ ] Attention 机制
+- [ ] KV Cache
+- [ ] MoE
 
-## 💻 项目结构
+---
+
+## 💻 今日编码任务
+
+### 文件结构
 
 ```
 day01-llm-foundation/
 ├── README.md
-├── sync_chat.py          # 同步聊天调用
-├── stream_chat.py        # 流式聊天调用
 ├── model_config.py       # 模型配置抽象
-└── requirements.txt      # 依赖
+├── sync_chat.py          # 同步调用
+├── stream_chat.py        # 流式调用
+├── async_chat.py         # 异步调用
+├── async_stream.py       # 异步流式调用
+├── requirements.txt
+└── boss-answer.md
 ```
 
-## 🔧 技术栈
+### Task 1: model_config.py（30min）
 
-- Python 3.12+
-- `openai` SDK (或任意兼容OpenAI格式的SDK)
-- Pydantic (用于配置)
+实现一个模型配置类，支持：
+- api_key / base_url / model_name
+- temperature / max_tokens / timeout
+- 从环境变量加载
+- 支持 OpenAI / 国产模型（通义、DeepSeek、智谱）
 
-## 🐉 Boss Challenge (1h)
+**关键代码提示**：
+```python
+from pydantic import BaseModel, Field
 
-回答以下问题（写入 `boss-answer.md`）：
+class ModelConfig(BaseModel):
+    api_key: str
+    base_url: str = "https://api.openai.com/v1"
+    model_name: str = "gpt-4o-mini"
+    temperature: float = 0.7
+    max_tokens: int = 2048
+    timeout: int = 60
+```
 
-1. **Token 是什么？** 中英文Token化有什么区别？
-2. **Context Window 是什么？** 为什么不能无限大？
-3. **Streaming 和普通请求有什么区别？** 延迟和成本上呢？
-4. **为什么 Agent 应用特别关注 Token？**
-5. **为什么不能把所有历史消息无限塞进 Context？**
-6. **Temperature 是什么？** 对 Agent 有什么影响？
-7. **System Prompt 和 User Prompt 有什么区别？**
+### Task 2: sync_chat.py（30min）
 
-## 📌 Java 类比
+实现同步调用：
+- 用户输入 → LLM → 完整返回
+- 打印 Token 使用量
+- 打印耗时
 
-| Python | Java |
-|--------|------|
-| `async def` | `CompletableFuture.supplyAsync()` |
-| `from typing import Protocol` | `interface` |
-| `Pydantic BaseModel` | `DTO + Bean Validation` |
-| `List[dict]` messages | `Message[]` |
+**验收标准**：
+```bash
+python sync_chat.py "你好，请介绍一下你自己"
+# 输出：
+# ✅ Response (input: 15 tokens, output: 45 tokens, total: 60 tokens, 耗时: 1.2s)
+#    你好！我是一个AI助手...
+```
 
-## ✅ 提交清单
+### Task 3: stream_chat.py（40min）
 
-- [x] `README.md` — 今天学到了什么 + 原来以为是什么 + 现在理解是什么
-- [x] `sync_chat.py` — 能同步调用LLM并拿到完整回复
-- [x] `stream_chat.py` — 能流式逐字输出
-- [x] `model_config.py` — 配置可切换不同模型/provider
-- [x] `boss-answer.md` — 7个Boss问题答案
-- [x] Git Commit
+实现流式调用：
+- 逐字打印
+- 统计 TTFT（首Token时间）
+- 统计 TPS（每秒Token数）
 
-## 🤖 AI辅助规则
+**验收标准**：
+```bash
+python stream_chat.py "写一首关于编程的诗"
+# 输出：
+# 📡 连接建立，等待首Token...
+# 编程...（逐字出现）
+# 
+# 📊 TTFT: 0.3s | Tokens: 85 | TPS: 45.2 | 耗时: 2.1s
+```
 
-第一天不要直接让AI写完整代码。
+### Task 4: async_chat.py（40min）
 
-正确用法：
-> "我有10年Java经验，正在学Python。这个概念我不懂，能解释一下吗？然后给我提示，但不要给完整代码。"
+实现异步调用：
+- async def
+- asyncio.gather 并发多个请求
+- 对比同步 vs 异步耗时
 
-错误用法：
-> "帮我写一个完整的LLM Client。"
+**验收标准**：
+```bash
+python async_chat.py
+# 输出：
+# 🚀 并发发送 3 个请求...
+# ✅ 请求1完成 (1.5s)
+# ✅ 请求2完成 (1.3s)
+# ✅ 请求3完成 (1.4s)
+# 📊 总耗时: 1.5s (同步预计: 4.2s)
+```
+
+### Task 5: async_stream.py（40min）
+
+实现异步流式调用：
+- 这是生产级 Agent 的基础
+- 多个请求同时流式输出
+
+**验收标准**：
+```bash
+python async_stream.py
+# 输出：
+# [请求1] 编程是...
+# [请求2] 代码如诗...
+# [请求3] 逻辑之美...
+# （交错流式输出）
+```
 
 ---
 
-**今日积分**: ⭐ 理论__分 | 💻 编码__分 | 🐉 Boss__分 = ___/80
+## 🤖 Codex / Claude Code 任务
+
+### 今天 AI 可以帮你
+- 解释 Python 语法（async/await、generator）
+- 解释 OpenAI SDK 参数含义
+- 帮你调试代码报错
+- 解释 Token 计算逻辑
+
+### 今天 AI 不能帮你
+- 替你理解概念（你必须自己理解）
+- 替你写完整代码（你必须自己敲）
+- 替你回答 Boss（你必须自己想）
+
+### 正确用法
+> "我有10年Java经验，Python的async/await我不太熟。请用Java的CompletableFuture类比解释一下，然后给我一个最小示例。"
+
+### 错误用法
+> "帮我写一个完整的 LLM Client。"
+
+---
+
+## 📝 GitHub 提交规范
+
+### 提交结构
+```
+01-newbie-village/
+└── day01-llm-foundation/
+    ├── README.md           # 学习总结
+    ├── model_config.py     # 配置抽象
+    ├── sync_chat.py        # 同步
+    ├── stream_chat.py      # 流式
+    ├── async_chat.py       # 异步
+    ├── async_stream.py     # 异步流式
+    ├── requirements.txt
+    └── boss-answer.md      # Boss答案
+```
+
+### README.md 必须包含
+```markdown
+# Day 1 学习总结
+
+## 今天学到了什么
+（用自己的话写，不要抄文档）
+
+## 原来以为是什么 vs 现在理解是什么
+| 概念 | 原来以为 | 现在理解 |
+|------|----------|----------|
+| Token | ... | ... |
+| Context | ... | ... |
+
+## 遇到的坑
+（记录踩过的坑）
+
+## 代码运行截图
+（贴终端输出）
+```
+
+### Commit 规范
+```bash
+git add 01-newbie-village/day01-llm-foundation/
+git commit -m "feat(day01): LLM Foundation - 4种调用模式完成"
+```
+
+---
+
+## 🐉 今日 Boss
+
+### Boss 问题
+
+1. **Token 是什么？中英文 Token 化有什么区别？**
+2. **Context Window 是什么？为什么不能无限大？**
+3. **Streaming 和普通请求有什么区别？延迟和成本上呢？**
+4. **为什么 Agent 应用特别关注 Token？**
+5. **为什么不能把所有历史消息无限塞进 Context？**
+6. **TTFT 和 TPS 是什么？对用户体验有什么影响？**
+7. **System Prompt 和 User Prompt 有什么区别？**
+
+### 验收标准
+- 每个答案 **不少于50字**
+- 必须 **用自己的话**，不能抄文档
+- 必须 **结合代码运行结果** 来讲
+
+---
+
+## 🎤 面试题
+
+1. **LLM、Chat Model、Agent 有什么区别？**
+2. **Message 和 Prompt 是什么关系？**
+3. **Context Window 是什么？**
+4. **Streaming 为什么提升用户体验？Streaming 是否降低模型总耗时？**
+5. **TTFT 和 TPS 是什么？如何优化？**
+
+---
+
+## ⭐ 通关评分（100分）
+
+| 项目 | 分值 | 评分标准 |
+|------|------|----------|
+| sync_chat.py | 15分 | 能运行 + 打印Token + 打印耗时 |
+| stream_chat.py | 15分 | 能流式输出 + 统计TTFT/TPS |
+| async_chat.py | 15分 | 能并发 + 对比同步/异步 |
+| async_stream.py | 15分 | 能异步流式 + 多请求交错 |
+| README 学习总结 | 15分 | 有自己的理解，不是抄的 |
+| Boss 答案 | 15分 | 7题全部完成 + 用自己的话 |
+| 代码质量 | 10分 | 命名清晰 + 注释 + 结构 |
+
+---
+
+## 🔓 解锁条件
+
+- [ ] 4个代码文件全部能运行
+- [ ] Boss 7题全部完成
+- [ ] README 学习总结完成
+- [ ] Git Commit 完成
+- [ ] 总分 ≥ 60分
+
+**解锁后进入 Day 2: Structured Output**
+
+---
+
+## 📊 今日检查清单
+
+- [ ] 读了 OpenAI Text Generation 文档
+- [ ] 读了 OpenAI Streaming 文档
+- [ ] 写了 model_config.py
+- [ ] 写了 sync_chat.py
+- [ ] 写了 stream_chat.py
+- [ ] 写了 async_chat.py
+- [ ] 写了 async_stream.py
+- [ ] 运行了所有代码
+- [ ] 写了 README 学习总结
+- [ ] 写了 boss-answer.md
+- [ ] Git Commit
+
+---
+
+**今日积分**: ⭐ 理论__分 | 💻 编码__分 | 🐉 Boss__分 = ___/100

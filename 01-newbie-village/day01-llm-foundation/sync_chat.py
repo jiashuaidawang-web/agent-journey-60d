@@ -1,45 +1,59 @@
 """
 Day 1: Synchronous LLM Chat Client.
 
+最基础的 LLM 调用模式：用户输入 → 等待 → 完整返回。
+
 Usage:
     python sync_chat.py "你好，请介绍一下你自己"
+    python sync_chat.py  # 默认提示
 """
 
-import os
 import sys
+import time
 from pathlib import Path
 
 # Add parent directory to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
+from model_config import ModelConfig
 
-def sync_chat(prompt: str) -> str:
-    """Synchronous chat completion call."""
+
+def sync_chat(prompt: str, system_prompt: str = "You are a helpful assistant.") -> str:
+    """同步调用 LLM。
+
+    Args:
+        prompt: 用户输入
+        system_prompt: 系统提示词
+
+    Returns:
+        模型回复文本
+    """
     try:
         from openai import OpenAI
-        from model_config import ModelConfig
     except ImportError:
-        print("❌ 请先安装依赖: pip install openai pydantic")
-        print("   并配置 .env 文件")
+        print("❌ 请先安装依赖: pip install openai")
         sys.exit(1)
 
-    # Load config from environment
-    api_key = os.getenv("OPENAI_API_KEY", "your-key-here")
-    base_url = os.getenv("OPENAI_BASE_URL", "https://api.openai.com/v1")
-    model = os.getenv("MODEL_NAME", "gpt-4o")
+    config = ModelConfig.from_env()
 
-    config = ModelConfig(
-        api_key=api_key,
-        base_url=base_url,
-        model_name=model,
-    )
+    if not config.api_key or config.api_key == "your-key-here":
+        print("❌ 请设置 OPENAI_API_KEY 环境变量")
+        print("   或在 .env 文件中配置")
+        sys.exit(1)
 
     client = OpenAI(**config.get_client_kwargs())
 
     messages = [
-        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "system", "content": system_prompt},
         {"role": "user", "content": prompt},
     ]
+
+    print(f"📤 发送请求到 {config.model_name}...")
+    print(f"   System: {system_prompt}")
+    print(f"   User: {prompt}")
+    print()
+
+    start_time = time.time()
 
     response = client.chat.completions.create(
         model=config.model_name,
@@ -48,9 +62,22 @@ def sync_chat(prompt: str) -> str:
         max_tokens=config.max_tokens,
     )
 
+    elapsed = time.time() - start_time
     result = response.choices[0].message.content
-    print(f"\n✅ Response ({response.usage.total_tokens} tokens):")
-    print(f"   {result}\n")
+
+    # 打印结果
+    print(f"✅ Response:")
+    print(f"   {result}")
+    print()
+
+    # 打印统计
+    usage = response.usage
+    print(f"📊 统计:")
+    print(f"   Input Tokens:  {usage.prompt_tokens}")
+    print(f"   Output Tokens: {usage.completion_tokens}")
+    print(f"   Total Tokens:  {usage.total_tokens}")
+    print(f"   耗时:          {elapsed:.2f}s")
+
     return result
 
 

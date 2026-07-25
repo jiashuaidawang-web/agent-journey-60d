@@ -1,0 +1,3 @@
+# Day 46: Requirements
+
+numpy>=1.24.0

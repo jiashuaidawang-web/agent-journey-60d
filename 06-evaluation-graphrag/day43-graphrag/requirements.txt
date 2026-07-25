@@ -1,0 +1,4 @@
+# Day 43: Requirements
+
+# 无额外依赖，纯 Python 实现
+# 生产环境可用: neo4j, langchain-neo4j

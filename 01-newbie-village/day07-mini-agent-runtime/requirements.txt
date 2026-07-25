@@ -1,0 +1,4 @@
+# Day 7: Requirements
+
+openai>=1.0.0
+pydantic>=2.0.0

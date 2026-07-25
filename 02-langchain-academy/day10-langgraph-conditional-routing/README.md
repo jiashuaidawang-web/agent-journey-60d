@@ -48,10 +48,11 @@ graph.add_conditional_edges("router", route, {
 ```
 day10-langgraph-conditional-routing/
 ├── README.md
-├── router_graph.py          # Router Graph
-├── multi_branch_graph.py    # 多分支 Graph
+├── LEARNING_FLOW.md           # 学习流程
+├── 00_router_graph.py         # Router Graph
+├── 01_multi_branch_graph.py   # 多分支 Graph
 ├── requirements.txt
-└── boss-answer.md
+└── 99-boss-answer.md
 ```
 
 ### Task 1: router_graph.py（60min）
@@ -93,3 +94,80 @@ day10-langgraph-conditional-routing/
 - [ ] 总分 ≥ 60分
 
 **解锁后进入 Day 11: Persistence + Checkpoint**
+
+---
+
+## 🤖 Codex / Claude Code 任务
+
+### 今天 AI 可以帮你
+- 解释条件路由函数的作用和返回值
+- 解释路由映射的作用
+- 帮你调试代码报错
+- 解释循环的实现和终止条件
+
+### 今天 AI 不能帮你
+- 替你理解概念（你必须自己理解）
+- 替你写完整代码（你必须自己敲）
+- 替你回答 Boss（你必须自己想）
+
+### 正确用法
+> "条件路由函数返回的是节点名称还是 State 字段？请用 Java 的 Switch 语句类比解释一下路由映射。"
+
+### 错误用法
+> "帮我写一个完整的 Router Graph。"
+
+---
+
+## 📝 GitHub 提交规范
+
+### 提交结构
+```
+02-langchain-academy/
+└── day10-langgraph-conditional-routing/
+    ├── README.md           # 学习总结
+    ├── LEARNING_FLOW.md    # 学习流程
+    ├── 00_router_graph.py         # Router Graph
+    ├── 01_multi_branch_graph.py   # 多分支 Graph
+    ├── requirements.txt
+    └── 99-boss-answer.md   # Boss 答案
+```
+
+### README.md 必须包含
+```markdown
+# Day 10 学习总结
+
+## 今天学到了什么
+（用自己的话写，不要抄文档）
+
+## 原来以为是什么 vs 现在理解是什么
+| 概念 | 原来以为 | 现在理解 |
+|------|----------|----------|
+| 条件路由 | ... | ... |
+| 路由映射 | ... | ... |
+
+## 遇到的坑
+（记录踩过的坑）
+
+## 代码运行截图
+（贴终端输出）
+```
+
+### Commit 规范
+```bash
+git add 02-langchain-academy/day10-langgraph-conditional-routing/
+git commit -m "feat(day10): LangGraph Conditional Routing - Router Graph 完成"
+```
+
+---
+
+## 📊 今日检查清单
+
+- [ ] 读了 LangGraph Edges 文档
+- [ ] 写了 00_router_graph.py
+- [ ] 写了 01_multi_branch_graph.py
+- [ ] 运行了所有代码
+- [ ] 写了 README 学习总结
+- [ ] 写了 99-boss-answer.md
+- [ ] Git Commit
+
+**今日积分**: ⭐ 理论__分 | 💻 编码__分 | 🐉 Boss__分 = ___/100

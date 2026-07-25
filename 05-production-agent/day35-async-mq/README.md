@@ -72,10 +72,9 @@
 ```
 day35-async-mq/
 ├── README.md
-├── async_agent.py           # 异步 Agent
-├── mq_demo.py               # 消息队列
+├── 00_async_agent.py           # 异步 Agent
 ├── requirements.txt
-└── boss-answer.md
+└── 99-boss-answer.md
 ```
 
 ### Task 1: async_agent.py（60min）
@@ -113,3 +112,78 @@ day35-async-mq/
 - [ ] 总分 ≥ 60分
 
 **解锁后进入 Day 36: Java Control Plane**
+
+---
+
+## 🤖 Codex / Claude Code 任务
+
+### 今天 AI 可以帮你
+- 解释异步处理的核心概念
+- 解释消息队列在 Agent 系统中的作用
+- 帮你调试代码报错
+- 对比 RocketMQ / Kafka / RabbitMQ 的异同
+
+### 今天 AI 不能帮你
+- 替你理解概念（你必须自己理解）
+- 替你写完整代码（你必须自己敲）
+- 替你回答 Boss（你必须自己想）
+
+### 正确用法
+> "我有 Java 经验，对 Python 的 asyncio 不太熟。请用 Java 的 CompletableFuture 和 @Async 类比解释一下异步 Agent 的实现，然后给我一个最小示例。"
+
+### 错误用法
+> "帮我写一个完整的异步 Agent 系统。"
+
+---
+
+## 📝 GitHub 提交规范
+
+### 提交结构
+```
+05-production-agent/
+└── day35-async-mq/
+    ├── README.md           # 学习总结
+    ├── LEARNING_FLOW.md    # 学习流程
+    ├── 00_async_agent.py    # 异步 Agent
+    ├── requirements.txt
+    └── 99-boss-answer.md   # Boss 答案
+```
+
+### README.md 必须包含
+```markdown
+# Day 35 学习总结
+
+## 今天学到了什么
+（用自己的话写，不要抄文档）
+
+## 原来以为是什么 vs 现在理解是什么
+| 概念 | 原来以为 | 现在理解 |
+|------|----------|----------|
+| 异步 Agent | ... | ... |
+| 任务状态追踪 | ... | ... |
+
+## 遇到的坑
+（记录踩过的坑）
+
+## 代码运行截图
+（贴终端输出）
+```
+
+### Commit 规范
+```bash
+git add 05-production-agent/day35-async-mq/
+git commit -m "feat(day35): Async + MQ - 异步 Agent 完成"
+```
+
+---
+
+## 📊 今日检查清单
+
+- [ ] 读了 RocketMQ / Spring Async 官方文档
+- [ ] 写了 00_async_agent.py
+- [ ] 运行了所有代码
+- [ ] 写了 README 学习总结
+- [ ] 写了 99-boss-answer.md
+- [ ] Git Commit
+
+**今日积分**: ⭐ 理论__分 | 💻 编码__分 | 🐉 Boss__分 = ___/100

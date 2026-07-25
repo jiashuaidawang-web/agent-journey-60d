@@ -1,9 +1,29 @@
 """
-Mini Agent Runtime - Core Module.
+================================================================================
+Day 7 - Mini Agent Runtime - 核心模块 | mini_agent_runtime/core/__init__.py
+================================================================================
 
-核心模块：Agent 类、Agent Loop、Context 管理、状态管理。
+【学习目标】
+理解 Agent Runtime 的核心模块：Agent、AgentLoop、ContextManager、AgentState
 
-这是整个 Runtime 的心脏，把 Model + Tool + Memory + State 串起来。
+【前置知识】
+- Day 5 Agent Loop
+- Day 6 Agent Patterns
+
+【操作步骤】
+1. 先阅读本文件，理解核心抽象
+2. 然后阅读 model/__init__.py（模型抽象）
+3. 然后阅读 tools/__init__.py（工具系统）
+4. 然后阅读 memory/__init__.py（记忆系统）
+5. 最后运行 examples/run_agent.py
+
+【代码结构】
+- AgentState: 状态管理
+- ContextManager: Context 组装
+- AgentLoop: 核心循环
+- Agent: 对外统一接口
+
+================================================================================
 """
 
 from __future__ import annotations

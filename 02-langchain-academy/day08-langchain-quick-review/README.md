@@ -84,11 +84,12 @@
 ```
 day08-langchain-quick-review/
 ├── README.md
-├── langchain_basics.py        # LangChain 基础演示
-├── langchain_agent.py         # 用 LangChain 写 Agent
-├── compare_agent.py           # 手写 vs LangChain 对比
+├── LEARNING_FLOW.md           # 学习流程
+├── 00_langchain_basics.py     # LangChain 基础演示
+├── 01_langchain_agent.py      # 用 LangChain 写 Agent
+├── 02_compare_agent.py        # 手写 vs LangChain 对比
 ├── requirements.txt
-└── boss-answer.md
+└── 99-boss-answer.md
 ```
 
 ### Task 1: langchain_basics.py（30min）
@@ -149,3 +150,83 @@ day08-langchain-quick-review/
 - [ ] 总分 ≥ 60分
 
 **解锁后进入 Day 9: LangGraph State + Node + Edge**
+
+---
+
+## 🤖 Codex / Claude Code 任务
+
+### 今天 AI 可以帮你
+- 解释 LangChain 的 Runnable 和 LCEL 核心概念
+- 解释 LangChain Tool 定义和 Agent 用法
+- 帮你调试代码报错
+- 对比手写 Agent Runtime 和 LangChain Agent 的优劣
+
+### 今天 AI 不能帮你
+- 替你理解概念（你必须自己理解）
+- 替你写完整代码（你必须自己敲）
+- 替你回答 Boss（你必须自己想）
+
+### 正确用法
+> "我有 Java 经验，Python 的装饰器不太熟。请用 Java 的注解类比解释一下 @tool 装饰器，然后给我一个最小示例。"
+
+### 错误用法
+> "帮我写一个完整的 LangChain Agent。"
+
+---
+
+## 📝 GitHub 提交规范
+
+### 提交结构
+```
+02-langchain-academy/
+└── day08-langchain-quick-review/
+    ├── README.md           # 学习总结
+    ├── LEARNING_FLOW.md    # 学习流程
+    ├── 00_langchain_basics.py     # LangChain 基础演示
+    ├── 01_langchain_agent.py      # 用 LangChain 写 Agent
+    ├── 02_compare_agent.py        # 手写 vs LangChain 对比
+    ├── requirements.txt
+    └── 99-boss-answer.md   # Boss 答案
+```
+
+### README.md 必须包含
+```markdown
+# Day 8 学习总结
+
+## 今天学到了什么
+（用自己的话写，不要抄文档）
+
+## 原来以为是什么 vs 现在理解是什么
+| 概念 | 原来以为 | 现在理解 |
+|------|----------|----------|
+| Runnable | ... | ... |
+| LCEL | ... | ... |
+
+## 遇到的坑
+（记录踩过的坑）
+
+## 代码运行截图
+（贴终端输出）
+```
+
+### Commit 规范
+```bash
+git add 02-langchain-academy/day08-langchain-quick-review/
+git commit -m "feat(day08): LangChain 快速过 - Runnable/LCEL/Agent 完成"
+```
+
+---
+
+## 📊 今日检查清单
+
+- [ ] 读了 LangChain Python Docs
+- [ ] 读了 LCEL 文档
+- [ ] 写了 00_langchain_basics.py
+- [ ] 写了 01_langchain_agent.py
+- [ ] 写了 02_compare_agent.py
+- [ ] 运行了所有代码
+- [ ] 写了 README 学习总结
+- [ ] 写了 99-boss-answer.md
+- [ ] Git Commit
+
+**今日积分**: ⭐ 理论__分 | 💻 编码__分 | 🐉 Boss__分 = ___/100

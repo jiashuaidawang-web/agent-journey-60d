@@ -130,9 +130,9 @@
 ```
 day54-final-boss/
 ├── README.md
+├── LEARNING_FLOW.md
 ├── final_boss_answers.md    # 10 道面试题答案
-├── requirements.txt
-└── boss-answer.md
+└── 99-boss-answer.md
 ```
 
 ### Task: final_boss_answers.md（4h）
@@ -165,3 +165,76 @@ day54-final-boss/
 - [ ] 总分 ≥ 60分
 
 **🎉 通关后，恭喜你完成 Agent Journey 60D！**
+
+---
+
+## 🤖 Codex / Claude Code 任务
+
+### 今天 AI 可以帮你
+- 解释 10 道面试题的回答思路（架构、框架、协议、选型、成本、安全）
+- 解释如何在面试中展现差异化竞争力
+- 帮你模拟面试，优化回答表达
+- 对比不同项目亮点的呈现方式
+
+### 今天 AI 不能帮你
+- 替你理解 60 天所学的知识（你必须自己理解）
+- 替你写完整的面试题答案（你必须自己敲）
+- 替你回答 Boss（你必须自己想）
+
+### 正确用法
+> "我要参加 Agent 开发岗位面试。请帮我模拟面试，围绕我的两个项目追问 5 个技术深度问题，并点评我的回答。"
+
+### 错误用法
+> "帮我写 10 道面试题的标准答案，我直接背。"
+
+---
+
+## 📝 GitHub 提交规范
+
+### 提交结构
+```
+08-final-projects/
+└── day54-final-boss/
+    ├── README.md           # 学习总结
+    ├── LEARNING_FLOW.md    # 学习流程
+    ├── final_boss_answers.md  # 10 道面试题答案
+    └── 99-boss-answer.md   # Boss 答案
+```
+
+### README.md 必须包含
+```markdown
+# Day 54 学习总结
+
+## 今天学到了什么
+（用自己的话写，不要抄文档）
+
+## 原来以为是什么 vs 现在理解是什么
+| 概念 | 原来以为 | 现在理解 |
+|------|----------|----------|
+| 面试回答 | ... | ... |
+| 项目亮点呈现 | ... | ... |
+
+## 遇到的坑
+（记录踩过的坑）
+
+## 代码运行截图
+（贴终端输出）
+```
+
+### Commit 规范
+```bash
+git add 08-final-projects/day54-final-boss/
+git commit -m "feat(day54): Final Boss - 模拟面试与 10 道面试题完成"
+```
+
+---
+
+## 📊 今日检查清单
+
+- [ ] 读了 Interview Prep 资料
+- [ ] 写了 final_boss_answers.md
+- [ ] 写了 README 学习总结
+- [ ] 写了 99-boss-answer.md
+- [ ] Git Commit
+
+**今日积分**: ⭐ 理论__分 | 💻 编码__分 | 🐉 Boss__分 = ___/100

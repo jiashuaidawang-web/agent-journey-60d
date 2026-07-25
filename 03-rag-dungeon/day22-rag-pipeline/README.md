@@ -61,10 +61,11 @@
 ```
 day22-rag-pipeline/
 ├── README.md
-├── rag_pipeline.py           # 完整 RAG Pipeline
-├── rag_evaluation.py         # RAG 评测
+├── LEARNING_FLOW.md
+├── 00_rag_evaluation.py         # RAG 评测
+├── 01_rag_pipeline.py           # 完整 RAG Pipeline
 ├── requirements.txt
-└── boss-answer.md
+└── 99-boss-answer.md
 ```
 
 ### Task 1: rag_pipeline.py（3-4h）
@@ -119,3 +120,80 @@ day22-rag-pipeline/
 - [ ] 总分 ≥ 60分
 
 **通关后，RAG Dungeon 毕业！进入下一章：MCP + A2A + Multi-Agent**
+
+---
+
+## 🤖 Codex / Claude Code 任务
+
+### 今天 AI 可以帮你
+- 解释 RAG 完整流程的各阶段作用
+- 解释 RAG 评测指标（Precision@K、Recall@K、MRR、NDCG）
+- 帮你调试代码报错
+- 对比不同 RAG 架构的优劣
+
+### 今天 AI 不能帮你
+- 替你理解概念（你必须自己理解）
+- 替你写完整代码（你必须自己敲）
+- 替你回答 Boss（你必须自己想）
+
+### 正确用法
+> "我理解 Spring Batch Pipeline，但 RAG 的上下文组装不太熟，请解释一下 Chunk 结果如何组装成 LLM 的输入，然后给我一个最小示例。"
+
+### 错误用法
+> "帮我写一个完整的 RAG Pipeline 系统。"
+
+---
+
+## 📝 GitHub 提交规范
+
+### 提交结构
+```
+03-rag-dungeon/
+└── day22-rag-pipeline/
+    ├── README.md           # 学习总结
+    ├── LEARNING_FLOW.md    # 学习流程
+    ├── 00_rag_evaluation.py # RAG 评测
+    ├── 01_rag_pipeline.py   # 完整 RAG Pipeline
+    ├── 99-boss-answer.md   # Boss 答案
+    └── requirements.txt
+```
+
+### README.md 必须包含
+```markdown
+# Day 22 学习总结
+
+## 今天学到了什么
+（用自己的话写，不要抄文档）
+
+## 原来以为是什么 vs 现在理解是什么
+| 概念 | 原来以为 | 现在理解 |
+|------|----------|----------|
+| RAG Pipeline | ... | ... |
+| RAG Evaluation | ... | ... |
+
+## 遇到的坑
+（记录踩过的坑）
+
+## 代码运行截图
+（贴终端输出）
+```
+
+### Commit 规范
+```bash
+git add 03-rag-dungeon/day22-rag-pipeline/
+git commit -m "feat(day22): RAG Pipeline - 完整 RAG 流水线完成"
+```
+
+---
+
+## 📊 今日检查清单
+
+- [ ] 读了 LangChain RAG 或 LlamaIndex RAG 文档
+- [ ] 写了 00_rag_evaluation.py
+- [ ] 写了 01_rag_pipeline.py
+- [ ] 运行了所有代码
+- [ ] 写了 README 学习总结
+- [ ] 写了 99-boss-answer.md
+- [ ] Git Commit
+
+**今日积分**: ⭐ 理论__分 | 💻 编码__分 | 🐉 Boss__分 = ___/100

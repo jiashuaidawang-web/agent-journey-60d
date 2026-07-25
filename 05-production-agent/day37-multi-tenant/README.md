@@ -65,10 +65,9 @@
 ```
 day37-multi-tenant/
 ├── README.md
-├── tenant_context.py        # 租户上下文
-├── data_isolation.py        # 数据隔离
+├── 00_tenant_context.py        # 租户上下文 + 数据/配额隔离
 ├── requirements.txt
-└── boss-answer.md
+└── 99-boss-answer.md
 ```
 
 ### Task 1: tenant_context.py（60min）
@@ -106,3 +105,78 @@ day37-multi-tenant/
 - [ ] 总分 ≥ 60分
 
 **解锁后进入 Day 38: Agent Platform**
+
+---
+
+## 🤖 Codex / Claude Code 任务
+
+### 今天 AI 可以帮你
+- 解释多租户隔离的核心概念
+- 解释数据隔离方案的优劣
+- 帮你调试代码报错
+- 对比 Java ThreadLocal 和 Python 上下文管理的异同
+
+### 今天 AI 不能帮你
+- 替你理解概念（你必须自己理解）
+- 替你写完整代码（你必须自己敲）
+- 替你回答 Boss（你必须自己想）
+
+### 正确用法
+> "我有 Java 经验，对 Python 的上下文管理器不太熟。请用 Java 的 ThreadLocal 和 MyBatis 拦截器类比解释一下租户上下文和数据隔离的实现，然后给我一个最小示例。"
+
+### 错误用法
+> "帮我写一个完整的多租户隔离系统。"
+
+---
+
+## 📝 GitHub 提交规范
+
+### 提交结构
+```
+05-production-agent/
+└── day37-multi-tenant/
+    ├── README.md           # 学习总结
+    ├── LEARNING_FLOW.md    # 学习流程
+    ├── 00_tenant_context.py   # 租户上下文 + 数据/配额隔离
+    ├── requirements.txt
+    └── 99-boss-answer.md   # Boss 答案
+```
+
+### README.md 必须包含
+```markdown
+# Day 37 学习总结
+
+## 今天学到了什么
+（用自己的话写，不要抄文档）
+
+## 原来以为是什么 vs 现在理解是什么
+| 概念 | 原来以为 | 现在理解 |
+|------|----------|----------|
+| 租户上下文 | ... | ... |
+| 数据隔离 | ... | ... |
+
+## 遇到的坑
+（记录踩过的坑）
+
+## 代码运行截图
+（贴终端输出）
+```
+
+### Commit 规范
+```bash
+git add 05-production-agent/day37-multi-tenant/
+git commit -m "feat(day37): Multi-tenant - 租户上下文和数据隔离完成"
+```
+
+---
+
+## 📊 今日检查清单
+
+- [ ] 读了 Spring Multi-tenant 官方文档
+- [ ] 写了 00_tenant_context.py
+- [ ] 运行了所有代码
+- [ ] 写了 README 学习总结
+- [ ] 写了 99-boss-answer.md
+- [ ] Git Commit
+
+**今日积分**: ⭐ 理论__分 | 💻 编码__分 | 🐉 Boss__分 = ___/100

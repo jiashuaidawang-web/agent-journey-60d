@@ -80,10 +80,10 @@
 ```
 day43-graphrag/
 ├── README.md
-├── knowledge_graph.py       # 知识图谱构建
-├── graph_retrieval.py       # 图检索
+├── LEARNING_FLOW.md         # 学习流程
+├── 00_knowledge_graph.py    # 知识图谱构建
 ├── requirements.txt
-└── boss-answer.md
+└── 99-boss-answer.md
 ```
 
 ### Task 1: knowledge_graph.py（60min）
@@ -129,3 +129,78 @@ day43-graphrag/
 - [ ] 总分 ≥ 60分
 
 **解锁后进入 Day 44: GraphRAG Hybrid**
+
+---
+
+## 🤖 Codex / Claude Code 任务
+
+### 今天 AI 可以帮你
+- 解释 GraphRAG 的原理和流程
+- 解释知识图谱的核心概念（实体 / 关系 / 社区）
+- 帮你调试知识图谱代码报错
+- 对比 GraphRAG 和传统 RAG 的优劣
+
+### 今天 AI 不能帮你
+- 替你理解概念（你必须自己理解）
+- 替你写完整代码（你必须自己敲）
+- 替你回答 Boss（你必须自己想）
+
+### 正确用法
+> "我理解传统 RAG 是基于块检索的，但 GraphRAG 的'多跳推理'具体是怎么做到的？请用'贵州茅台的竞争对手的总部在哪里'这个例子解释。"
+
+### 错误用法
+> "帮我写一个完整的 GraphRAG 系统。"
+
+---
+
+## 📝 GitHub 提交规范
+
+### 提交结构
+```
+06-evaluation-graphrag/
+└── day43-graphrag/
+    ├── README.md           # 学习总结
+    ├── LEARNING_FLOW.md    # 学习流程
+    ├── 00_knowledge_graph.py  # 知识图谱构建
+    ├── requirements.txt
+    └── 99-boss-answer.md   # Boss 答案
+```
+
+### README.md 必须包含
+```markdown
+# Day 43 学习总结
+
+## 今天学到了什么
+（用自己的话写，不要抄文档）
+
+## 原来以为是什么 vs 现在理解是什么
+| 概念 | 原来以为 | 现在理解 |
+|------|----------|----------|
+| GraphRAG | ... | ... |
+| 知识图谱 | ... | ... |
+
+## 遇到的坑
+（记录踩过的坑）
+
+## 代码运行截图
+（贴终端输出）
+```
+
+### Commit 规范
+```bash
+git add 06-evaluation-graphrag/day43-graphrag/
+git commit -m "feat(day43): GraphRAG - 知识图谱构建完成"
+```
+
+---
+
+## 📊 今日检查清单
+
+- [ ] 读了 GraphRAG 论文 / Neo4j GraphRAG 文档
+- [ ] 写了 00_knowledge_graph.py
+- [ ] 运行了所有代码
+- [ ] 写了 README 学习总结
+- [ ] 写了 99-boss-answer.md
+- [ ] Git Commit
+
+**今日积分**: ⭐ 理论__分 | 💻 编码__分 | 🐉 Boss__分 = ___/100

@@ -93,20 +93,20 @@ External Systems (DB, API, Files)
 ```
 day23-mcp/
 ├── README.md
-├── mcp_basics.py            # MCP 基础演示
-├── mcp_tools_demo.py        # MCP Tools 演示
+├── 00_mcp_basics.py          # MCP 基础演示
+├── 01_mcp_tools_demo.py      # MCP Tools 演示
 ├── requirements.txt
-└── boss-answer.md
+└── 99-boss-answer.md
 ```
 
-### Task 1: mcp_basics.py（45min）
+### Task 1: 00_mcp_basics.py（45min）
 
 演示 MCP 基础：
 - 创建 MCP Server
 - 定义 Tools
 - 启动 Server
 
-### Task 2: mcp_tools_demo.py（45min）
+### Task 2: 01_mcp_tools_demo.py（45min）
 
 演示 MCP Tools：
 - 定义多个工具
@@ -148,3 +148,81 @@ day23-mcp/
 - [ ] 总分 ≥ 60分
 
 **解锁后进入 Day 24: MCP Server**
+
+---
+
+## 🤖 Codex / Claude Code 任务
+
+### 今天 AI 可以帮你
+- 解释 MCP（Model Context Protocol）的核心概念
+- 解释 MCP Python SDK / FastMCP 的用法
+- 帮你调试代码报错
+- 对比 MCP 和 Function Calling 的优劣
+
+### 今天 AI 不能帮你
+- 替你理解概念（你必须自己理解）
+- 替你写完整代码（你必须自己敲）
+- 替你回答 Boss（你必须自己想）
+
+### 正确用法
+> "我有 HTTP API 开发经验，MCP 协议我不太熟。请用 RESTful API 的 Endpoint 类比解释 MCP 的 Tools 和 Resources，然后给我一个最小示例。"
+
+### 错误用法
+> "帮我写一个完整的 MCP Server。"
+
+---
+
+## 📝 GitHub 提交规范
+
+### 提交结构
+```
+04-mcp-a2a-multiagent/
+└── day23-mcp/
+    ├── README.md           # 学习总结
+    ├── LEARNING_FLOW.md    # 学习流程
+    ├── 00_mcp_basics.py    # MCP 基础演示
+    ├── 01_mcp_tools_demo.py # MCP Tools 演示
+    ├── requirements.txt
+    └── 99-boss-answer.md   # Boss 答案
+```
+
+### README.md 必须包含
+```markdown
+# Day 23 学习总结
+
+## 今天学到了什么
+（用自己的话写，不要抄文档）
+
+## 原来以为是什么 vs 现在理解是什么
+| 概念 | 原来以为 | 现在理解 |
+|------|----------|----------|
+| MCP | ... | ... |
+| Tools | ... | ... |
+
+## 遇到的坑
+（记录踩过的坑）
+
+## 代码运行截图
+（贴终端输出）
+```
+
+### Commit 规范
+```bash
+git add 04-mcp-a2a-multiagent/day23-mcp/
+git commit -m "feat(day23): MCP 协议详解 - MCP 基础和 Tools 演示完成"
+```
+
+---
+
+## 📊 今日检查清单
+
+- [ ] 读了 MCP 官方文档
+- [ ] 读了 MCP Python SDK 资料
+- [ ] 写了 00_mcp_basics.py
+- [ ] 写了 01_mcp_tools_demo.py
+- [ ] 运行了所有代码
+- [ ] 写了 README 学习总结
+- [ ] 写了 99-boss-answer.md
+- [ ] Git Commit
+
+**今日积分**: ⭐ 理论__分 | 💻 编码__分 | 🐉 Boss__分 = ___/100

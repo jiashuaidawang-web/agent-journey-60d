@@ -1,7 +1,18 @@
 """
-Mini Agent Runtime - Observability.
+================================================================================
+Day 7 - Mini Agent Runtime - 可观测性 | mini_agent_runtime/observability/__init__.py
+================================================================================
 
-可观测性：Token 统计。
+【学习目标】
+理解 TokenCounter：Token 统计
+
+【前置知识】
+- memory/__init__.py（记忆系统）
+
+【代码结构】
+- TokenCounter: Token 计数器
+
+================================================================================
 """
 
 from __future__ import annotations

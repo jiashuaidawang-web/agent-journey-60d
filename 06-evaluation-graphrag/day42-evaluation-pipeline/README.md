@@ -59,9 +59,9 @@
 ```
 day42-evaluation-pipeline/
 ├── README.md
-├── eval_pipeline.py         # 评测流水线
-├── requirements.txt
-└── boss-answer.md
+├── LEARNING_FLOW.md         # 学习流程
+├── 00_eval_pipeline.py      # 评测流水线
+└── 99-boss-answer.md
 ```
 
 ### Task: eval_pipeline.py（90min）
@@ -94,3 +94,77 @@ day42-evaluation-pipeline/
 - [ ] 总分 ≥ 60分
 
 **解锁后进入 Day 43: GraphRAG**
+
+---
+
+## 🤖 Codex / Claude Code 任务
+
+### 今天 AI 可以帮你
+- 解释评测流水线的完整流程
+- 解释如何发现 RAG 退化
+- 帮你调试评测代码报错
+- 对比不同自动化评测方案的优劣
+
+### 今天 AI 不能帮你
+- 替你理解概念（你必须自己理解）
+- 替你写完整代码（你必须自己敲）
+- 替你回答 Boss（你必须自己想）
+
+### 正确用法
+> "我理解了评测流水线的流程，但如何在 CI/CD 里集成自动评测并设置退化告警？请用一个最小示例解释。"
+
+### 错误用法
+> "帮我写一个完整的自动化评测流水线。"
+
+---
+
+## 📝 GitHub 提交规范
+
+### 提交结构
+```
+06-evaluation-graphrag/
+└── day42-evaluation-pipeline/
+    ├── README.md           # 学习总结
+    ├── LEARNING_FLOW.md    # 学习流程
+    ├── 00_eval_pipeline.py # 评测流水线
+    └── 99-boss-answer.md   # Boss 答案
+```
+
+### README.md 必须包含
+```markdown
+# Day 42 学习总结
+
+## 今天学到了什么
+（用自己的话写，不要抄文档）
+
+## 原来以为是什么 vs 现在理解是什么
+| 概念 | 原来以为 | 现在理解 |
+|------|----------|----------|
+| 评测流水线 | ... | ... |
+| RAG 退化 | ... | ... |
+
+## 遇到的坑
+（记录踩过的坑）
+
+## 代码运行截图
+（贴终端输出）
+```
+
+### Commit 规范
+```bash
+git add 06-evaluation-graphrag/day42-evaluation-pipeline/
+git commit -m "feat(day42): Evaluation Pipeline - 自动化评测流水线完成"
+```
+
+---
+
+## 📊 今日检查清单
+
+- [ ] 读了 LangSmith Eval 文档
+- [ ] 写了 00_eval_pipeline.py
+- [ ] 运行了所有代码
+- [ ] 写了 README 学习总结
+- [ ] 写了 99-boss-answer.md
+- [ ] Git Commit
+
+**今日积分**: ⭐ 理论__分 | 💻 编码__分 | 🐉 Boss__分 = ___/100

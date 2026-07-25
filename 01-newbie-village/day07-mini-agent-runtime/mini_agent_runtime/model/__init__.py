@@ -1,17 +1,23 @@
 """
-Mini Agent Runtime - Model Abstraction.
+================================================================================
+Day 7 - Mini Agent Runtime - 模型抽象 | mini_agent_runtime/model/__init__.py
+================================================================================
 
-模型抽象层：定义 Model 接口 + OpenAI 实现。
+【学习目标】
+理解 Model 抽象接口：定义 Model 接口 + OpenAI 实现
 
-Java 类比:
-    Model 接口    ≈  interface ChatModel { ChatResponse chat(ChatRequest) }
-    OpenAIModel   ≈  OpenAIChatModel implements ChatModel
+【前置知识】
+- core/__init__.py（核心模块）
+
+【代码结构】
+- Model: 抽象接口（chat / chat_with_tools）
+- OpenAIModel: OpenAI 兼容实现
+
+================================================================================
 """
 
 from __future__ import annotations
 
-import json
-import time
 from abc import ABC, abstractmethod
 
 

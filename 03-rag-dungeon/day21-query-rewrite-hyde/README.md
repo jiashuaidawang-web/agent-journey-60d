@@ -76,10 +76,9 @@
 ```
 day21-query-rewrite-hyde/
 ├── README.md
-├── query_rewrite.py         # Query Rewrite
-├── hyde_demo.py             # HyDE 演示
-├── requirements.txt
-└── boss-answer.md
+├── LEARNING_FLOW.md
+├── 00_hyde_demo.py              # HyDE 演示
+└── 99-boss-answer.md
 ```
 
 ### Task 1: query_rewrite.py（45min）
@@ -117,3 +116,77 @@ day21-query-rewrite-hyde/
 - [ ] 总分 ≥ 60分
 
 **解锁后进入 Day 22: RAG Pipeline**
+
+---
+
+## 🤖 Codex / Claude Code 任务
+
+### 今天 AI 可以帮你
+- 解释查询重写的必要性
+- 解释 HyDE 的原理和实现
+- 帮你调试代码报错
+- 对比不同查询重写方法的优劣
+
+### 今天 AI 不能帮你
+- 替你理解概念（你必须自己理解）
+- 替你写完整代码（你必须自己敲）
+- 替你回答 Boss（你必须自己想）
+
+### 正确用法
+> "我理解查询优化，但 HyDE 的假设文档生成不太熟，请解释一下为什么文档-文档相似度比查询-文档相似度更准确，然后给我一个最小示例。"
+
+### 错误用法
+> "帮我写一个完整的查询重写系统。"
+
+---
+
+## 📝 GitHub 提交规范
+
+### 提交结构
+```
+03-rag-dungeon/
+└── day21-query-rewrite-hyde/
+    ├── README.md           # 学习总结
+    ├── LEARNING_FLOW.md    # 学习流程
+    ├── 00_hyde_demo.py      # HyDE 演示
+    └── 99-boss-answer.md   # Boss 答案
+```
+
+### README.md 必须包含
+```markdown
+# Day 21 学习总结
+
+## 今天学到了什么
+（用自己的话写，不要抄文档）
+
+## 原来以为是什么 vs 现在理解是什么
+| 概念 | 原来以为 | 现在理解 |
+|------|----------|----------|
+| Query Rewrite | ... | ... |
+| HyDE | ... | ... |
+
+## 遇到的坑
+（记录踩过的坑）
+
+## 代码运行截图
+（贴终端输出）
+```
+
+### Commit 规范
+```bash
+git add 03-rag-dungeon/day21-query-rewrite-hyde/
+git commit -m "feat(day21): Query Rewrite / HyDE - 查询重写技术完成"
+```
+
+---
+
+## 📊 今日检查清单
+
+- [ ] 读了 HyDE 论文或相关资料
+- [ ] 写了 00_hyde_demo.py
+- [ ] 运行了所有代码
+- [ ] 写了 README 学习总结
+- [ ] 写了 99-boss-answer.md
+- [ ] Git Commit
+
+**今日积分**: ⭐ 理论__分 | 💻 编码__分 | 🐉 Boss__分 = ___/100

@@ -1,8 +1,20 @@
 """
-Mini Agent Runtime - Tool System.
+================================================================================
+Day 7 - Mini Agent Runtime - 工具系统 | mini_agent_runtime/tools/__init__.py
+================================================================================
 
-工具系统：Tool 基类 + ToolRegistry。
-复用 Day 4 的工具定义。
+【学习目标】
+理解 Tool 系统：Tool 基类 + ToolRegistry
+
+【前置知识】
+- model/__init__.py（模型抽象）
+
+【代码结构】
+- Tool: 抽象基类
+- CalculatorTool/WeatherTool/StockTool: 具体工具
+- ToolRegistry: 注册表
+
+================================================================================
 """
 
 from __future__ import annotations

@@ -83,10 +83,9 @@ Agent A                    Agent B
 ```
 day27-a2a/
 ├── README.md
-├── a2a_demo.py              # A2A 最小 Demo
-├── agent_card.py            # Agent Card
+├── 00_a2a_demo.py            # A2A 最小 Demo
 ├── requirements.txt
-└── boss-answer.md
+└── 99-boss-answer.md
 ```
 
 ### Task 1: a2a_demo.py（60min）
@@ -137,3 +136,79 @@ day27-a2a/
 - [ ] 总分 ≥ 60分
 
 **解锁后进入 Day 28: Multi-Agent Supervisor**
+
+---
+
+## 🤖 Codex / Claude Code 任务
+
+### 今天 AI 可以帮你
+- 解释 A2A（Agent-to-Agent）协议的核心概念
+- 解释 A2A 和 MCP 的区别与联系
+- 帮你调试 A2A Demo 代码报错
+- 对比 A2A 与直接 RPC 调用的优劣
+
+### 今天 AI 不能帮你
+- 替你理解概念（你必须自己理解）
+- 替你写完整代码（你必须自己敲）
+- 替你回答 Boss（你必须自己想）
+
+### 正确用法
+> "我理解微服务之间的 HTTP 调用，A2A 的 Agent Card 服务发现机制我不太熟。请用 Consul/Nacos 的服务注册与发现类比解释 A2A Registry 的工作原理，然后给我一个最小示例。"
+
+### 错误用法
+> "帮我写一个完整的 A2A 系统。"
+
+---
+
+## 📝 GitHub 提交规范
+
+### 提交结构
+```
+04-mcp-a2a-multiagent/
+└── day27-a2a/
+    ├── README.md           # 学习总结
+    ├── LEARNING_FLOW.md    # 学习流程
+    ├── 00_a2a_demo.py      # A2A 最小 Demo
+    ├── requirements.txt
+    └── 99-boss-answer.md   # Boss 答案
+```
+
+### README.md 必须包含
+```markdown
+# Day 27 学习总结
+
+## 今天学到了什么
+（用自己的话写，不要抄文档）
+
+## 原来以为是什么 vs 现在理解是什么
+| 概念 | 原来以为 | 现在理解 |
+|------|----------|----------|
+| A2A | ... | ... |
+| Agent Card | ... | ... |
+
+## 遇到的坑
+（记录踩过的坑）
+
+## 代码运行截图
+（贴终端输出）
+```
+
+### Commit 规范
+```bash
+git add 04-mcp-a2a-multiagent/day27-a2a/
+git commit -m "feat(day27): A2A 协议详解 - A2A Demo 和 Agent 协作完成"
+```
+
+---
+
+## 📊 今日检查清单
+
+- [ ] 读了 A2A 协议官方文档
+- [ ] 读了 A2A 规范
+- [ ] 写了 00_a2a_demo.py
+- [ ] 运行了所有代码
+- [ ] 写了 README 学习总结
+- [ ] 写了 99-boss-answer.md
+- [ ] Git Commit
+
+**今日积分**: ⭐ 理论__分 | 💻 编码__分 | 🐉 Boss__分 = ___/100

@@ -88,12 +88,13 @@ SFT → Reward Model → PPO 微调
 ```
 day47-sft-dpo/
 ├── README.md
-├── sft_dpo_demo.py          # SFT/DPO 原理演示
+├── LEARNING_FLOW.md            # 学习流程
+├── 00_sft_dpo_demo.py          # SFT/DPO 原理演示
 ├── requirements.txt
-└── boss-answer.md
+└── 99-boss-answer.md
 ```
 
-### Task: sft_dpo_demo.py（60min）
+### Task: 00_sft_dpo_demo.py（60min）
 
 演示 SFT/DPO 原理
 
@@ -131,3 +132,79 @@ day47-sft-dpo/
 - [ ] 总分 ≥ 60分
 
 **解锁后进入 Day 48: vLLM**
+
+---
+
+## 🤖 Codex / Claude Code 任务
+
+### 今天 AI 可以帮你
+- 解释 SFT 数据格式和训练流程
+- 解释 DPO 偏好优化的数学原理
+- 帮你调试 TRL 库的使用报错
+- 对比 RLHF 与 DPO 的优劣
+
+### 今天 AI 不能帮你
+- 替你理解概念（你必须自己理解）
+- 替你写完整代码（你必须自己敲）
+- 替你回答 Boss（你必须自己想）
+
+### 正确用法
+> "我了解监督学习，但对 DPO 如何跳过 Reward Model 直接优化不太熟。请用分类损失类比解释一下 DPO 的损失函数含义。"
+
+### 错误用法
+> "帮我写一个完整的 DPO 训练脚本。"
+
+---
+
+## 📝 GitHub 提交规范
+
+### 提交结构
+```
+07-llm-engineering/
+└── day47-sft-dpo/
+    ├── README.md           # 学习总结
+    ├── LEARNING_FLOW.md    # 学习流程
+    ├── 00_sft_dpo_demo.py   # SFT/DPO 原理演示
+    ├── requirements.txt
+    └── 99-boss-answer.md   # Boss 答案
+```
+
+### README.md 必须包含
+```markdown
+# Day 47 学习总结
+
+## 今天学到了什么
+（用自己的话写，不要抄文档）
+
+## 原来以为是什么 vs 现在理解是什么
+| 概念 | 原来以为 | 现在理解 |
+|------|----------|----------|
+| SFT | ... | ... |
+| DPO | ... | ... |
+
+## 遇到的坑
+（记录踩过的坑）
+
+## 代码运行截图
+（贴终端输出）
+```
+
+### Commit 规范
+```bash
+git add 07-llm-engineering/day47-sft-dpo/
+git commit -m "feat(day47): SFT/DPO - 监督微调与偏好对齐原理完成"
+```
+
+---
+
+## 📊 今日检查清单
+
+- [ ] 读了 SFT 文档（huggingface.co/docs/trl/sft_trainer）
+- [ ] 读了 DPO 论文（arxiv.org/abs/2305.18290）
+- [ ] 写了 00_sft_dpo_demo.py
+- [ ] 运行了所有代码
+- [ ] 写了 README 学习总结
+- [ ] 写了 99-boss-answer.md
+- [ ] Git Commit
+
+**今日积分**: ⭐ 理论__分 | 💻 编码__分 | 🐉 Boss__分 = ___/100

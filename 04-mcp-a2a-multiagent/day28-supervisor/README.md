@@ -65,10 +65,9 @@ Supervisor Agent
 ```
 day28-supervisor/
 ├── README.md
-├── supervisor_demo.py       # Supervisor 模式
-├── langgraph_supervisor.py  # LangGraph 实现
+├── 00_supervisor_demo.py     # Supervisor 模式
 ├── requirements.txt
-└── boss-answer.md
+└── 99-boss-answer.md
 ```
 
 ### Task 1: supervisor_demo.py（60min）
@@ -106,3 +105,79 @@ LangGraph 实现
 - [ ] 总分 ≥ 60分
 
 **解锁后进入 Day 29: Multi-Agent Router**
+
+---
+
+## 🤖 Codex / Claude Code 任务
+
+### 今天 AI 可以帮你
+- 解释 Supervisor 模式的核心概念
+- 解释 LangGraph Multi-Agent 的用法
+- 帮你调试 Supervisor Demo 代码报错
+- 对比 Supervisor 与 Router 的优劣
+
+### 今天 AI 不能帮你
+- 替你理解概念（你必须自己理解）
+- 替你写完整代码（你必须自己敲）
+- 替你回答 Boss（你必须自己想）
+
+### 正确用法
+> "我理解项目经理分配任务的流程，Supervisor Agent 的能力匹配分配我不太熟。请用项目管理中的任务分派类比解释 Supervisor 如何根据 Worker 能力分配任务，然后给我一个最小示例。"
+
+### 错误用法
+> "帮我写一个完整的 Supervisor 系统。"
+
+---
+
+## 📝 GitHub 提交规范
+
+### 提交结构
+```
+04-mcp-a2a-multiagent/
+└── day28-supervisor/
+    ├── README.md           # 学习总结
+    ├── LEARNING_FLOW.md    # 学习流程
+    ├── 00_supervisor_demo.py # Supervisor 模式
+    ├── requirements.txt
+    └── 99-boss-answer.md   # Boss 答案
+```
+
+### README.md 必须包含
+```markdown
+# Day 28 学习总结
+
+## 今天学到了什么
+（用自己的话写，不要抄文档）
+
+## 原来以为是什么 vs 现在理解是什么
+| 概念 | 原来以为 | 现在理解 |
+|------|----------|----------|
+| Supervisor | ... | ... |
+| 任务分配 | ... | ... |
+
+## 遇到的坑
+（记录踩过的坑）
+
+## 代码运行截图
+（贴终端输出）
+```
+
+### Commit 规范
+```bash
+git add 04-mcp-a2a-multiagent/day28-supervisor/
+git commit -m "feat(day28): Multi-Agent Supervisor - Supervisor 模式完成"
+```
+
+---
+
+## 📊 今日检查清单
+
+- [ ] 读了 LangGraph Multi-Agent 文档
+- [ ] 读了 Supervisor 教程
+- [ ] 写了 00_supervisor_demo.py
+- [ ] 运行了所有代码
+- [ ] 写了 README 学习总结
+- [ ] 写了 99-boss-answer.md
+- [ ] Git Commit
+
+**今日积分**: ⭐ 理论__分 | 💻 编码__分 | 🐉 Boss__分 = ___/100

@@ -1,0 +1,23 @@
+# 01_sync_chat.py 预期输出
+
+运行命令:
+    python 01_sync_chat.py "你好，请介绍一下你自己"
+
+预期输出:
+    📤 发送请求到 gpt-4o-mini...
+       System: You are a helpful assistant.
+       User: 你好，请介绍一下你自己
+
+    ✅ Response:
+       你好！我是一个AI助手，可以回答你的问题、提供信息和帮助。请问有什么我可以帮你的吗？
+
+    📊 统计:
+       Input Tokens:  15
+       Output Tokens: 45
+       Total Tokens:  60
+       耗时:          1.23s
+
+验证点:
+    □ 能看到完整回复
+    □ 能看到 Token 统计（Input/Output/Total）
+    □ 能看到耗时

@@ -65,10 +65,9 @@
 ```
 day17-chunking/
 ├── README.md
-├── chunking_demo.py          # 分块演示
-├── chunk_experiment.py       # 分块对比实验
-├── requirements.txt
-└── boss-answer.md
+├── LEARNING_FLOW.md
+├── 00_chunking_demo.py          # 分块演示
+└── 99-boss-answer.md
 ```
 
 ### Task 1: chunking_demo.py（45min）
@@ -110,3 +109,77 @@ day17-chunking/
 - [ ] 总分 ≥ 60分
 
 **解锁后进入 Day 18: Dense Retrieval**
+
+---
+
+## 🤖 Codex / Claude Code 任务
+
+### 今天 AI 可以帮你
+- 解释文档分块的必要性（Context Window、嵌入模型限制）
+- 解释不同分块策略的适用场景
+- 帮你调试代码报错
+- 对比不同 Chunk Size 对检索效果的影响
+
+### 今天 AI 不能帮你
+- 替你理解概念（你必须自己理解）
+- 替你写完整代码（你必须自己敲）
+- 替你回答 Boss（你必须自己想）
+
+### 正确用法
+> "我有 Java 经验，Python 的文本切分逻辑不太熟，请解释一下 Recursive Chunking 的递归逻辑，然后给我一个最小示例。"
+
+### 错误用法
+> "帮我写一个完整的文档分块系统。"
+
+---
+
+## 📝 GitHub 提交规范
+
+### 提交结构
+```
+03-rag-dungeon/
+└── day17-chunking/
+    ├── README.md           # 学习总结
+    ├── LEARNING_FLOW.md    # 学习流程
+    ├── 00_chunking_demo.py  # 分块演示
+    └── 99-boss-answer.md   # Boss 答案
+```
+
+### README.md 必须包含
+```markdown
+# Day 17 学习总结
+
+## 今天学到了什么
+（用自己的话写，不要抄文档）
+
+## 原来以为是什么 vs 现在理解是什么
+| 概念 | 原来以为 | 现在理解 |
+|------|----------|----------|
+| Chunking | ... | ... |
+| Overlap | ... | ... |
+
+## 遇到的坑
+（记录踩过的坑）
+
+## 代码运行截图
+（贴终端输出）
+```
+
+### Commit 规范
+```bash
+git add 03-rag-dungeon/day17-chunking/
+git commit -m "feat(day17): Chunking - 文档分块策略完成"
+```
+
+---
+
+## 📊 今日检查清单
+
+- [ ] 读了 LangChain Text Splitters 文档
+- [ ] 写了 00_chunking_demo.py
+- [ ] 运行了所有代码
+- [ ] 写了 README 学习总结
+- [ ] 写了 99-boss-answer.md
+- [ ] Git Commit
+
+**今日积分**: ⭐ 理论__分 | 💻 编码__分 | 🐉 Boss__分 = ___/100

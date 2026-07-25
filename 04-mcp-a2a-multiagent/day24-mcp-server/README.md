@@ -57,10 +57,9 @@
 ```
 day24-mcp-server/
 ├── README.md
-├── mcp_server.py            # MCP Server 实现
-├── mcp_resources.py         # MCP Resources
+├── 00_mcp_server.py          # MCP Server 实现
 ├── requirements.txt
-└── boss-answer.md
+└── 99-boss-answer.md
 ```
 
 ### Task 1: mcp_server.py（90min）
@@ -103,3 +102,79 @@ day24-mcp-server/
 - [ ] 总分 ≥ 60分
 
 **解锁后进入 Day 25: MCP Client**
+
+---
+
+## 🤖 Codex / Claude Code 任务
+
+### 今天 AI 可以帮你
+- 解释 MCP Server 的实现原理
+- 解释 FastMCP 和底层 SDK 的用法差异
+- 帮你调试 MCP Server 代码报错
+- 对比 stdio / HTTP / SSE 传输方式的优劣
+
+### 今天 AI 不能帮你
+- 替你理解概念（你必须自己理解）
+- 替你写完整代码（你必须自己敲）
+- 替你回答 Boss（你必须自己想）
+
+### 正确用法
+> "我理解 RESTful API 的 Endpoint 注册，MCP 的工具注册机制我不太熟。请用 Flask 的路由装饰器类比解释 @mcp.tool() 的工作原理，然后给我一个最小示例。"
+
+### 错误用法
+> "帮我写一个完整的 MCP Server。"
+
+---
+
+## 📝 GitHub 提交规范
+
+### 提交结构
+```
+04-mcp-a2a-multiagent/
+└── day24-mcp-server/
+    ├── README.md           # 学习总结
+    ├── LEARNING_FLOW.md    # 学习流程
+    ├── 00_mcp_server.py    # MCP Server 实现
+    ├── requirements.txt
+    └── 99-boss-answer.md   # Boss 答案
+```
+
+### README.md 必须包含
+```markdown
+# Day 24 学习总结
+
+## 今天学到了什么
+（用自己的话写，不要抄文档）
+
+## 原来以为是什么 vs 现在理解是什么
+| 概念 | 原来以为 | 现在理解 |
+|------|----------|----------|
+| MCP Server | ... | ... |
+| Tool 注册 | ... | ... |
+
+## 遇到的坑
+（记录踩过的坑）
+
+## 代码运行截图
+（贴终端输出）
+```
+
+### Commit 规范
+```bash
+git add 04-mcp-a2a-multiagent/day24-mcp-server/
+git commit -m "feat(day24): MCP Server 实现 - Server 和工具注册完成"
+```
+
+---
+
+## 📊 今日检查清单
+
+- [ ] 读了 MCP Python SDK 文档
+- [ ] 读了 FastMCP 资料
+- [ ] 写了 00_mcp_server.py
+- [ ] 运行了所有代码
+- [ ] 写了 README 学习总结
+- [ ] 写了 99-boss-answer.md
+- [ ] Git Commit
+
+**今日积分**: ⭐ 理论__分 | 💻 编码__分 | 🐉 Boss__分 = ___/100

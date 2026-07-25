@@ -66,10 +66,11 @@
 ```
 day16-vector-db/
 ├── README.md
-├── milvus_demo.py            # Milvus 演示
-├── faiss_demo.py             # FAISS 演示
+├── LEARNING_FLOW.md
+├── 00_faiss_demo.py             # FAISS 演示
+├── 01_milvus_demo.py            # Milvus 演示
 ├── requirements.txt
-└── boss-answer.md
+└── 99-boss-answer.md
 ```
 
 ### Task 1: milvus_demo.py（60min）
@@ -113,3 +114,80 @@ day16-vector-db/
 - [ ] 总分 ≥ 60分
 
 **解锁后进入 Day 17: Chunking**
+
+---
+
+## 🤖 Codex / Claude Code 任务
+
+### 今天 AI 可以帮你
+- 解释向量数据库的核心概念（Collection、Entity、Index）
+- 解释 Milvus / FAISS 的用法
+- 帮你调试代码报错
+- 对比不同索引类型（FLAT、IVF、HNSW）的优劣
+
+### 今天 AI 不能帮你
+- 替你理解概念（你必须自己理解）
+- 替你写完整代码（你必须自己敲）
+- 替你回答 Boss（你必须自己想）
+
+### 正确用法
+> "我理解 B+Tree 索引，但 HNSW 图索引不太熟，请用跳表的类比解释一下 HNSW 的多层搜索原理，然后给我一个最小示例。"
+
+### 错误用法
+> "帮我写一个完整的向量检索系统。"
+
+---
+
+## 📝 GitHub 提交规范
+
+### 提交结构
+```
+03-rag-dungeon/
+└── day16-vector-db/
+    ├── README.md           # 学习总结
+    ├── LEARNING_FLOW.md    # 学习流程
+    ├── 00_faiss_demo.py     # FAISS 演示
+    ├── 01_milvus_demo.py    # Milvus 演示
+    ├── 99-boss-answer.md   # Boss 答案
+    └── requirements.txt
+```
+
+### README.md 必须包含
+```markdown
+# Day 16 学习总结
+
+## 今天学到了什么
+（用自己的话写，不要抄文档）
+
+## 原来以为是什么 vs 现在理解是什么
+| 概念 | 原来以为 | 现在理解 |
+|------|----------|----------|
+| Vector DB | ... | ... |
+| HNSW | ... | ... |
+
+## 遇到的坑
+（记录踩过的坑）
+
+## 代码运行截图
+（贴终端输出）
+```
+
+### Commit 规范
+```bash
+git add 03-rag-dungeon/day16-vector-db/
+git commit -m "feat(day16): Vector DB - FAISS 与 Milvus 向量检索完成"
+```
+
+---
+
+## 📊 今日检查清单
+
+- [ ] 读了 Milvus 文档或 FAISS 文档
+- [ ] 写了 00_faiss_demo.py
+- [ ] 写了 01_milvus_demo.py
+- [ ] 运行了所有代码
+- [ ] 写了 README 学习总结
+- [ ] 写了 99-boss-answer.md
+- [ ] Git Commit
+
+**今日积分**: ⭐ 理论__分 | 💻 编码__分 | 🐉 Boss__分 = ___/100

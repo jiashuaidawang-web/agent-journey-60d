@@ -81,12 +81,13 @@
 ```
 day46-lora-qlora/
 ├── README.md
-├── lora_demo.py             # LoRA 原理演示
+├── LEARNING_FLOW.md            # 学习流程
+├── 00_lora_demo.py             # LoRA 原理演示
 ├── requirements.txt
-└── boss-answer.md
+└── 99-boss-answer.md
 ```
 
-### Task: lora_demo.py（60min）
+### Task: 00_lora_demo.py（60min）
 
 演示 LoRA 原理
 
@@ -124,3 +125,79 @@ day46-lora-qlora/
 - [ ] 总分 ≥ 60分
 
 **解锁后进入 Day 47: SFT / DPO**
+
+---
+
+## 🤖 Codex / Claude Code 任务
+
+### 今天 AI 可以帮你
+- 解释 LoRA 低秩分解的数学原理
+- 解释 QLoRA 量化与 LoRA 的结合方式
+- 帮你调试 PEFT 库的使用报错
+- 对比全量微调与 LoRA 的优劣
+
+### 今天 AI 不能帮你
+- 替你理解概念（你必须自己理解）
+- 替你写完整代码（你必须自己敲）
+- 替你回答 Boss（你必须自己想）
+
+### 正确用法
+> "我有深度学习基础，但对 LoRA 的低秩矩阵分解不太熟。请用 PCA 类比解释一下 ΔW = A × B 的含义，然后给一个最小示例。"
+
+### 错误用法
+> "帮我写一个完整的 LoRA 微调脚本。"
+
+---
+
+## 📝 GitHub 提交规范
+
+### 提交结构
+```
+07-llm-engineering/
+└── day46-lora-qlora/
+    ├── README.md           # 学习总结
+    ├── LEARNING_FLOW.md    # 学习流程
+    ├── 00_lora_demo.py      # LoRA 原理演示
+    ├── requirements.txt
+    └── 99-boss-answer.md   # Boss 答案
+```
+
+### README.md 必须包含
+```markdown
+# Day 46 学习总结
+
+## 今天学到了什么
+（用自己的话写，不要抄文档）
+
+## 原来以为是什么 vs 现在理解是什么
+| 概念 | 原来以为 | 现在理解 |
+|------|----------|----------|
+| LoRA | ... | ... |
+| QLoRA | ... | ... |
+
+## 遇到的坑
+（记录踩过的坑）
+
+## 代码运行截图
+（贴终端输出）
+```
+
+### Commit 规范
+```bash
+git add 07-llm-engineering/day46-lora-qlora/
+git commit -m "feat(day46): LoRA/QLoRA - 高效参数微调原理完成"
+```
+
+---
+
+## 📊 今日检查清单
+
+- [ ] 读了 LoRA 论文（arxiv.org/abs/2106.09685）
+- [ ] 读了 QLoRA 论文（arxiv.org/abs/2305.14314）
+- [ ] 写了 00_lora_demo.py
+- [ ] 运行了所有代码
+- [ ] 写了 README 学习总结
+- [ ] 写了 99-boss-answer.md
+- [ ] Git Commit
+
+**今日积分**: ⭐ 理论__分 | 💻 编码__分 | 🐉 Boss__分 = ___/100

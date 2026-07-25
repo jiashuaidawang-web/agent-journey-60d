@@ -74,10 +74,10 @@
 ```
 day32-observability/
 ├── README.md
-├── trace_demo.py            # Trace 实现
-├── metrics_demo.py          # 指标统计
+├── 00_metrics_demo.py          # 指标统计
+├── 01_trace_demo.py            # Trace 实现
 ├── requirements.txt
-└── boss-answer.md
+└── 99-boss-answer.md
 ```
 
 ### Task 1: trace_demo.py（60min）
@@ -128,3 +128,80 @@ day32-observability/
 - [ ] 总分 ≥ 60分
 
 **解锁后进入 Day 33: Security**
+
+---
+
+## 🤖 Codex / Claude Code 任务
+
+### 今天 AI 可以帮你
+- 解释 Agent 可观测性的核心概念
+- 解释 LangSmith / Phoenix 的用法
+- 帮你调试代码报错
+- 对比不同实现方案的优劣
+
+### 今天 AI 不能帮你
+- 替你理解概念（你必须自己理解）
+- 替你写完整代码（你必须自己敲）
+- 替你回答 Boss（你必须自己想）
+
+### 正确用法
+> "我有 Java 经验，Python 的装饰器和上下文管理器我不太熟。请用 Java 的 AOP 类比解释一下可观测性中的 Span 机制，然后给我一个最小示例。"
+
+### 错误用法
+> "帮我写一个完整的 Agent 监控系统。"
+
+---
+
+## 📝 GitHub 提交规范
+
+### 提交结构
+```
+05-production-agent/
+└── day32-observability/
+    ├── README.md           # 学习总结
+    ├── LEARNING_FLOW.md    # 学习流程
+    ├── 00_metrics_demo.py   # 指标统计
+    ├── 01_trace_demo.py     # Trace 实现
+    ├── requirements.txt
+    └── 99-boss-answer.md   # Boss 答案
+```
+
+### README.md 必须包含
+```markdown
+# Day 32 学习总结
+
+## 今天学到了什么
+（用自己的话写，不要抄文档）
+
+## 原来以为是什么 vs 现在理解是什么
+| 概念 | 原来以为 | 现在理解 |
+|------|----------|----------|
+| Trace | ... | ... |
+| Token 统计 | ... | ... |
+
+## 遇到的坑
+（记录踩过的坑）
+
+## 代码运行截图
+（贴终端输出）
+```
+
+### Commit 规范
+```bash
+git add 05-production-agent/day32-observability/
+git commit -m "feat(day32): Observability - Trace 和 Metrics 完成"
+```
+
+---
+
+## 📊 今日检查清单
+
+- [ ] 读了 LangSmith / Phoenix 官方文档
+- [ ] 写了 00_metrics_demo.py
+- [ ] 写了 01_trace_demo.py
+- [ ] 运行了所有代码
+- [ ] 写了 README 学习总结
+- [ ] 写了 99-boss-answer.md
+- [ ] Git Commit
+
+**今日积分**: ⭐ 理论__分 | 💻 编码__分 | 🐉 Boss__分 = ___/100

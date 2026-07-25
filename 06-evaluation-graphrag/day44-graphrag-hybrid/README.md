@@ -72,9 +72,9 @@ Top-K 最终结果
 ```
 day44-graphrag-hybrid/
 ├── README.md
-├── hybrid_retrieval.py      # 混合检索
-├── requirements.txt
-└── boss-answer.md
+├── LEARNING_FLOW.md         # 学习流程
+├── 00_hybrid_retrieval.py   # 混合检索
+└── 99-boss-answer.md
 ```
 
 ### Task: hybrid_retrieval.py（90min）
@@ -107,3 +107,77 @@ day44-graphrag-hybrid/
 - [ ] 总分 ≥ 60分
 
 **解锁后进入 Day 45: Eval-GraphRAG Integration**
+
+---
+
+## 🤖 Codex / Claude Code 任务
+
+### 今天 AI 可以帮你
+- 解释混合索引的优势和融合策略（RRF / Weighted / Sequential）
+- 解释向量检索和图检索的互补性
+- 帮你调试混合检索代码报错
+- 对比不同融合策略的优劣
+
+### 今天 AI 不能帮你
+- 替你理解概念（你必须自己理解）
+- 替你写完整代码（你必须自己敲）
+- 替你回答 Boss（你必须自己想）
+
+### 正确用法
+> "我理解向量检索和图检索各自的优势，但 RRF（Reciprocal Rank Fusion）具体怎么算？请用一个最小示例解释。"
+
+### 错误用法
+> "帮我写一个完整的混合检索系统。"
+
+---
+
+## 📝 GitHub 提交规范
+
+### 提交结构
+```
+06-evaluation-graphrag/
+└── day44-graphrag-hybrid/
+    ├── README.md           # 学习总结
+    ├── LEARNING_FLOW.md    # 学习流程
+    ├── 00_hybrid_retrieval.py  # 混合检索
+    └── 99-boss-answer.md   # Boss 答案
+```
+
+### README.md 必须包含
+```markdown
+# Day 44 学习总结
+
+## 今天学到了什么
+（用自己的话写，不要抄文档）
+
+## 原来以为是什么 vs 现在理解是什么
+| 概念 | 原来以为 | 现在理解 |
+|------|----------|----------|
+| 混合索引 | ... | ... |
+| RRF 融合 | ... | ... |
+
+## 遇到的坑
+（记录踩过的坑）
+
+## 代码运行截图
+（贴终端输出）
+```
+
+### Commit 规范
+```bash
+git add 06-evaluation-graphrag/day44-graphrag-hybrid/
+git commit -m "feat(day44): GraphRAG Hybrid - 混合检索完成"
+```
+
+---
+
+## 📊 今日检查清单
+
+- [ ] 读了 Neo4j Hybrid 文档
+- [ ] 写了 00_hybrid_retrieval.py
+- [ ] 运行了所有代码
+- [ ] 写了 README 学习总结
+- [ ] 写了 99-boss-answer.md
+- [ ] Git Commit
+
+**今日积分**: ⭐ 理论__分 | 💻 编码__分 | 🐉 Boss__分 = ___/100

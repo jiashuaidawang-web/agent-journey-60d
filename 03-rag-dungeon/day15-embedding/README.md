@@ -84,10 +84,11 @@ similarity = dot(A, B) / (norm(A) * norm(B))
 ```
 day15-embedding/
 ├── README.md
-├── embedding_demo.py         # 嵌入演示
-├── similarity_demo.py        # 相似度计算
+├── LEARNING_FLOW.md
+├── 00_embedding_demo.py         # 嵌入演示
+├── 01_similarity_demo.py        # 相似度计算
 ├── requirements.txt
-└── boss-answer.md
+└── 99-boss-answer.md
 ```
 
 ### Task 1: embedding_demo.py（45min）
@@ -139,3 +140,80 @@ day15-embedding/
 - [ ] 总分 ≥ 60分
 
 **解锁后进入 Day 16: Vector DB**
+
+---
+
+## 🤖 Codex / Claude Code 任务
+
+### 今天 AI 可以帮你
+- 解释 Embedding 的核心概念（文本 → 向量）
+- 解释 BGE-M3 / Sentence Transformers 的用法
+- 帮你调试代码报错
+- 对比不同嵌入模型的优劣
+
+### 今天 AI 不能帮你
+- 替你理解概念（你必须自己理解）
+- 替你写完整代码（你必须自己敲）
+- 替你回答 Boss（你必须自己想）
+
+### 正确用法
+> "我有 Java 经验，Python 的 numpy 向量运算不太熟，请用 Java 的数组操作类比解释一下 Cosine Similarity 的计算过程，然后给我一个最小示例。"
+
+### 错误用法
+> "帮我写一个完整的 Embedding 检索系统。"
+
+---
+
+## 📝 GitHub 提交规范
+
+### 提交结构
+```
+03-rag-dungeon/
+└── day15-embedding/
+    ├── README.md           # 学习总结
+    ├── LEARNING_FLOW.md    # 学习流程
+    ├── 00_embedding_demo.py # 嵌入演示
+    ├── 01_similarity_demo.py # 相似度计算
+    ├── 99-boss-answer.md   # Boss 答案
+    └── requirements.txt
+```
+
+### README.md 必须包含
+```markdown
+# Day 15 学习总结
+
+## 今天学到了什么
+（用自己的话写，不要抄文档）
+
+## 原来以为是什么 vs 现在理解是什么
+| 概念 | 原来以为 | 现在理解 |
+|------|----------|----------|
+| Embedding | ... | ... |
+| Cosine Similarity | ... | ... |
+
+## 遇到的坑
+（记录踩过的坑）
+
+## 代码运行截图
+（贴终端输出）
+```
+
+### Commit 规范
+```bash
+git add 03-rag-dungeon/day15-embedding/
+git commit -m "feat(day15): Embedding - BGE-M3 嵌入与相似度计算完成"
+```
+
+---
+
+## 📊 今日检查清单
+
+- [ ] 读了 BGE-M3 论文或 Hugging Face Embeddings 文档
+- [ ] 写了 00_embedding_demo.py
+- [ ] 写了 01_similarity_demo.py
+- [ ] 运行了所有代码
+- [ ] 写了 README 学习总结
+- [ ] 写了 99-boss-answer.md
+- [ ] Git Commit
+
+**今日积分**: ⭐ 理论__分 | 💻 编码__分 | 🐉 Boss__分 = ___/100

@@ -228,12 +228,29 @@ python async_stream.py
 
 ## 今天学到了什么
 （用自己的话写，不要抄文档）
+ 今天学到了 LLM 相关的概念及openAi提供的各种接口调用 及LLM执行的过程
+概念相关的:
+token: LLM接受的最小单位, 英文字符一般4个字符一个token,中文一般一个字,1~3个token
+token分词器:将用户输出的文本,分割成若干个token,然后序列化 ,开头101,结尾102
+向量嵌入层:将token分词器分过后的 一个个token,按照向量维度去向量化,比如GPT-4是12288维度,则将每个token转为容量为12288浮点数的向量数组
+prompt:用户发送的文本,统一叫做提示词
+user system instructions: system 跟 instructions 都是系统预置的,优先级高于user
+windows context: 窗口上下文,包含用户输入的问题,模型的回答,工具调用,输出等所有的定西,窗口就算是118k也是有限的,可以用缓存机制缓存到本地,随用随调取,或者用动态窗口方式,只保留最近几轮
+asyncio: 异步架构,可以异步执行N多任务,用协程的方式,共享内存,有一个错误可能会导致整体失败
+gather: 等到都结束后一起返回
+BaseModel:来自Pydantic库，主要用于数据校验、序列化和类型提示：
+Consumer: 消费者,用于消费,只有输入没有输出Consumer<T>
+supplier: 生产者,只有输出没有输入 
+Function: 加工者,有输入也有输出Function<T,R>
+Predicate: 条件判断者 返回 bolean
+
+
 
 ## 原来以为是什么 vs 现在理解是什么
 | 概念 | 原来以为 | 现在理解 |
 |------|----------|----------|
-| Token | ... | ... |
-| Context | ... | ... |
+| Token | 原来模糊不清 | 现在知道,他就是一个被切割成的一个 最小向量单位,用于向量化以及意图识别跟上下文关联 |
+| Context | 上下文 | 现在理解的也是上下文 |
 
 ## 遇到的坑
 （记录踩过的坑）
@@ -255,12 +272,24 @@ git commit -m "feat(day01): LLM Foundation - 4种调用模式完成"
 ### Boss 问题
 
 1. **Token 是什么？中英文 Token 化有什么区别？**
+    LLM 接受处理的的最小单位,英文一般是4个字符为一个token,一个中文字大概1~3个token,所以用中文提示词还是有点费的
 2. **Context Window 是什么？为什么不能无限大？**
+   上下文窗口,因为最大目前也是100多k,也是有限的,如果一直保持长上下文窗口的话,那LLM的注意力会被稀释,且耗费的token量会越来越多,结果质量会变差
 3. **Streaming 和普通请求有什么区别？延迟和成本上呢？**
+   区别是在创建clent的时候需要指定stream = true
+   steaming的FTT会短,一般在500ms以内,给用户的感觉好,不会让用户等好几秒都没结果
+   成本是一样的
+    还是那句话,总消耗时间是一样的,只不过通过的话用户会等很长时间才能一次性的结果
 4. **为什么 Agent 应用特别关注 Token？**
+    成本:因为agent会调用多工具完成任务,token消耗是之前的5~10倍
+   因为 要保证持续稳定的输出质量高的答案,token是要一直提示的
 5. **为什么不能把所有历史消息无限塞进 Context？**
+   因为context是有上限的,无限塞的话,注意力会分散,导致回答的效果不好
 6. **TTFT 和 TPS 是什么？对用户体验有什么影响？**
+   TTFT是首次token 返回的时长,TPS 是 返回的总token数/时间
 7. **System Prompt 和 User Prompt 有什么区别？**
+    System prompt 是工程师预设的模型角色,比如java开发工程师,优先级高于用户,定于我是谁
+    User prompt 是用户的输出,他想要什么
 
 ### 验收标准
 - 每个答案 **不少于50字**
@@ -272,10 +301,20 @@ git commit -m "feat(day01): LLM Foundation - 4种调用模式完成"
 ## 🎤 面试题
 
 1. **LLM、Chat Model、Agent 有什么区别？**
+    LLM是经过大型参数,内存,算力训练出来的大语言模型LaragerLanageModel,默认的参数都是随机的,通过不断的学习跟训练,建立不同向量的关联关系,比如 猫狗可能就比较近, 猫 铃铛 可能就没那么近
+    Chat Model 语言聊天模型,比如GPT.GPT的。client.chat.completions.create 就是创建一个聊天的过程
+    Agent 可以执行很多复杂的任务,支持工具调用,更像是一个融合了很多功能的全能瘦
 2. **Message 和 Prompt 是什么关系？**
+    Message 有两种,一种
+    System Message:系统预设消息,角色,行为,对整个对话都是有效的,用户通常看不到
+    User Message: 用户的问题
 3. **Context Window 是什么？**
+    窗口上下文,包含用户的问题,模型的回答输出,工具的调用,记录等
 4. **Streaming 为什么提升用户体验？Streaming 是否降低模型总耗时？**
+    感官上模型一直在不断的输出,等待时长就是FFTT这个时长
+    但是总耗时上是跟同步一股脑返回是一样
 5. **TTFT 和 TPS 是什么？如何优化？**
+    TTFT是首次token 返回的时长,TPS 是 返回的总token数/时间
 
 ---
 

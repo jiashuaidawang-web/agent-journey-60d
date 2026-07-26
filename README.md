@@ -1,6 +1,8 @@
-# Agent Journey 60D v3.0
+# Agent Journey 60D v3.0 → v2.1
 
-> **10年Java架构师 → Agent Platform Architect 的60天闯关式转型计划**
+> **10年Java架构师 → 50W+ Agent Platform Architect 的60+天闯关式转型计划**
+>
+> **v2.1 更新**：融合军哥 86 节课精华（Spring AI / LangChain4j / Memory / Advisor），新增 Day 55-66 Java AI 工程化补充模块
 
 ---
 
@@ -8,12 +10,12 @@
 
 两个月内，从 Java 架构师转型为 **Agent Platform Architect**，完成：
 
-- **9个阶段**、**54个关卡**
+- **15个阶段**、**66个关卡**（原有 54 天 + 新增 12 天 Java AI 工程化）
 - **2个企业级项目**：
   - **Project 1**: Enterprise Agent Platform（Java控制平面 + Python AI服务）
   - **Project 2**: AI Investment Research Multi-Agent Platform
-- **60次Git Commit**（每天至少一个提交）
-- **差异化竞争力**: Java企业级架构 + Agent编排
+- **66次Git Commit**（每天至少一个提交）
+- **差异化竞争力**: Java企业级架构 + Agent编排 + AI工程化
 
 ---
 
@@ -106,11 +108,25 @@ agent-journey-60d/
 │   ├── day49-kv-cache-pagedattention/
 │   └── day50-model-gateway-router/
 │
-├── 08-final-projects/       # Phase 9: Final Projects (Day 53-60)
+├── 08-final-projects/       # Phase 9: Final Projects (Day 53-54)
 │   ├── day51-enterprise-agent-platform/     # ★ 项目一
 │   ├── day52-investment-research-platform/  # ★ 项目二
 │   ├── day53-architecture-review/
 │   └── day54-final-boss/
+│
+├── 09-java-ai-engineering/   # Phase 10-15: Java AI 工程化补充 (Day 55-66) ★ v2.1 新增
+│   ├── day55-spring-ai-overview/          # Spring AI 总览与生态定位
+│   ├── day56-spring-ai-model-integration/ # Spring AI 模型接入实战
+│   ├── day57-langchain4j-memory/          # LangChain4j + ChatMemory
+│   ├── day58-spring-ai-advisor/           # Spring AI Advisor 责任链
+│   ├── day59-mcp-transports/              # MCP 三种传输方式
+│   ├── day60-memory-deep-dive/            # Memory 深度体系
+│   ├── day61-lora-qlora/                  # LoRA/QLoRA 微调实战
+│   ├── day62-sft-dpo-deployment/          # SFT/DPO + 微调部署
+│   ├── day63-multimodal-agent/            # Multimodal Agent
+│   ├── day64-rag-internals/               # RAG 底层原理加深
+│   ├── day65-agent-architecture-review/   # Agent 架构综合复习
+│   └── day66-final-review/                # Final Review + 综合 Boss
 │
 └── docs/
     ├── architecture/         # 架构图
@@ -121,16 +137,31 @@ agent-journey-60d/
 
 ---
 
-## 🗺️ 60天总路线
+## 🗺️ 66天总路线（v2.1）
 
 ```
-Agent Journey 60D v3.0
+Agent Journey 60D v2.1
 ═══════════════════════════════════════════════════════
-目标：Senior Agent Engineer / Agent Platform Architect
-定位：Java企业级架构 + Agent编排
+目标：50W+ Agent Engineer / Agent Platform Engineer
+定位：Java企业级架构 + Agent编排 + AI工程化
 ═══════════════════════════════════════════════════════
 
-Phase 1  Day 1-3    LLM Foundation（压缩）
+Phase 1  Day 1-7    LLM Foundation + Agent核心（新手村）
+Phase 2  Day 8-14   LangChain快速过 + LangGraph深一周
+Phase 3  Day 15-22  RAG 全栈
+Phase 4  Day 23-31  MCP + A2A + Multi-Agent
+Phase 5  Day 32-38  Production Agent（Java优势发力）
+Phase 6  Day 39-45  Evaluation + GraphRAG
+Phase 7  Day 46-52  LLM Engineering（P2快速过）
+Phase 8  Day 53-54  Final Projects + 面试准备
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Phase 9  Day 55-56  Spring AI 生态（v2.1 新增）
+Phase 10 Day 57-58  LangChain4j + Advisor（v2.1 新增）
+Phase 11 Day 59-60  MCP 传输 + Memory 深度（v2.1 新增）
+Phase 12 Day 61-62  微调实战（v2.1 新增）
+Phase 13 Day 63-64  Multimodal + RAG 底层（v2.1 新增）
+Phase 14 Day 65-66  综合复习 + Final Boss（v2.1 新增）
+```
 Phase 2  Day 4-7    Agent Core + Tool Calling
 Phase 3  Day 8-14   LangChain快速过 + LangGraph深一周
 Phase 4  Day 15-22  RAG 全栈

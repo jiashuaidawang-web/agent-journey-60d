@@ -1,0 +1,16 @@
+# Day 59: MCP 三种传输方式 - 依赖
+
+# MCP SDK
+mcp>=1.0.0
+
+# Web 框架（用于 SSE 和 Streamable HTTP）
+starlette>=0.37.0
+uvicorn>=0.30.0
+
+# 可选：Spring AI MCP（Java 集成）
+# 注意：Spring AI 是 Java 库，这里仅作参考
+# 实际使用时请在 pom.xml 中添加：
+# <dependency>
+#     <groupId>org.springframework.ai</groupId>
+#     <artifactId>spring-ai-mcp</artifactId>
+# </dependency>

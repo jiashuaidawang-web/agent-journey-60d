@@ -1,0 +1,13 @@
+# Day 58 依赖包
+
+# 本 day 为概念学习 + Java 伪代码演示
+# 实际开发需要 Spring Boot 3.3+ 和 Spring AI 1.0+
+
+# Python 依赖（用于辅助脚本）
+# 无需额外依赖，使用标准库即可
+
+# Java 依赖（实际开发参考）
+# spring-boot-starter-web
+# spring-ai-openai-spring-boot-starter
+# spring-boot-starter-test
+# guava (RateLimiter)

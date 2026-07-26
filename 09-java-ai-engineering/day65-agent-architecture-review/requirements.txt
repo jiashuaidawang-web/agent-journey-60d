@@ -1,0 +1,13 @@
+# Day 65: Agent 架构综合复习 依赖
+
+# Agent 框架
+langchain>=0.3.0
+langgraph>=0.2.0
+openai>=1.30.0
+
+# 可视化
+matplotlib>=3.7.0
+plotly>=5.15.0
+
+# 工具
+python-dotenv>=1.0.0

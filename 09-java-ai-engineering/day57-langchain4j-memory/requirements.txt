@@ -1,0 +1,14 @@
+# Day 57 依赖包
+
+# 本 day 为概念学习 + Java 伪代码演示
+# 实际开发需要 Spring Boot 3.3+ 和 LangChain4j 0.33+
+
+# Python 依赖（用于辅助脚本）
+# 无需额外依赖，使用标准库即可
+
+# Java 依赖（实际开发参考）
+# langchain4j-spring-boot-starter
+# langchain4j-open-ai
+# langchain4j-ollama
+# spring-boot-starter-data-redis
+# spring-boot-starter-data-jpa

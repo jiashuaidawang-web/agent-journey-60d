@@ -1,0 +1,19 @@
+# Day 60: Memory 深度体系 - 依赖
+
+# Redis 客户端
+redis>=5.0.0
+
+# MySQL JDBC 驱动（可选）
+# mysql-connector-python>=8.0.0
+
+# Spring AI（Java 参考）
+# 注意：Spring AI 是 Java 库，这里仅作参考
+# 实际使用时请在 pom.xml 中添加：
+# <dependency>
+#     <groupId>org.springframework.ai</groupId>
+#     <artifactId>spring-ai-starter-model-openai</artifactId>
+# </dependency>
+# <dependency>
+#     <groupId>org.springframework.ai</groupId>
+#     <artifactId>spring-ai-starter-redis</artifactId>
+# </dependency>

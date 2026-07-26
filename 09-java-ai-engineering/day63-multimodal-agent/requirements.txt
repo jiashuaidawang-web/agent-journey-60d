@@ -1,0 +1,24 @@
+# Day 63: Multimodal Agent 依赖
+
+# VLM 调用
+openai>=1.30.0
+dashscope>=1.19.0  # 通义千问
+
+# 图像处理
+Pillow>=10.0.0
+
+# PDF 处理
+pdfplumber>=0.10.0
+PyMuPDF>=1.23.0  # fitz
+camelot-py>=0.11.0  # 表格提取
+
+# OCR
+paddleocr>=2.7.0
+paddlepaddle>=2.5.0
+
+# 语音
+edge-tts>=6.1.0  # 免费 TTS
+pyttsx3>=2.90  # 本地 TTS
+
+# 工具
+python-dotenv>=1.0.0

@@ -51,7 +51,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
-from Model_config import ModelConfig
+from utils.Model_config import ModelConfig
 
 
 def stream_chat(prompt: str, system_prompt: str = "You are a helpful assistant.") -> str:

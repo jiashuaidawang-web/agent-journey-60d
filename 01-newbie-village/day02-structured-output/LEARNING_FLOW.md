@@ -49,6 +49,6 @@ Step 6: 写学习总结（15分钟）
 
 | 文件 | 目标 | 难度 |
 |------|------|------|
-| [00_pydantic_models.py](00_pydantic_models.py) | Pydantic 模型定义 | ⭐ |
-| [01_intent_classifier.py](01_intent_classifier.py) | 意图分类器 | ⭐⭐ |
+| [00_pydantic_models.py](pydantic_models.py) | Pydantic 模型定义 | ⭐ |
+| [01_intent_classifier.py](Intent_classifier.py) | 意图分类器 | ⭐⭐ |
 | [99_boss_answer.md](99_boss_answer.md) | Boss 问题答案 | ⭐⭐ |

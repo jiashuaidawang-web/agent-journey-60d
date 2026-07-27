@@ -1,6 +1,6 @@
 """
 ================================================================================
-Day 2 - Pydantic 模型定义 | 00_pydantic_models.py
+Day 2 - Pydantic 模型定义 | pydantic_models.py
 ================================================================================
 
 【学习目标】
@@ -10,7 +10,7 @@ Day 2 - Pydantic 模型定义 | 00_pydantic_models.py
 - Day 1 LLM Foundation
 
 【操作步骤】
-1. 运行: python 00_pydantic_models.py
+1. 运行: python pydantic_models.py
 2. 观察输出：模型的 JSON 序列化和校验
 
 【预期输出】

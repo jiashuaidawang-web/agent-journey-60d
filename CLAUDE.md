@@ -47,9 +47,11 @@ agent-journey-60d/
 
 ## 👤 用户当前进度
 
-**当前学习 Day**：Day 1（刚开始）  
+**当前学习 Day**：Day 2（已完成，得分 66/100）  
 **当前 Phase**：Phase 1 - LLM Foundation + Context Engineering  
-**已完成 Day 数**：0 / 66
+**已完成 Day 数**：2 / 66  
+**Day 1 得分**：101/100（优秀）  
+**Day 2 得分**：66/100（通过，router 有改进空间）
 
 > **每次用户完成一天，请更新此进度！**
 

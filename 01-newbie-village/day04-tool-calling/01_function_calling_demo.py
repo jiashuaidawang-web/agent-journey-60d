@@ -56,7 +56,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 from tool import ALL_TOOLS, CalculatorTool, WeatherTool, StockTool
-from model_config import ModelConfig
+from utils.Model_config import ModelConfig
 
 
 def get_tools_definition() -> list[dict]:

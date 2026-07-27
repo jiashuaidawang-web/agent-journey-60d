@@ -56,7 +56,7 @@ Step 9: 写学习总结（15分钟）
 
 | 文件 | 目标 | 难度 |
 |------|------|------|
-| [00_model_config.py](Model_config.py) | 理解模型配置加载 | ⭐ |
+| [00_model_config.py](../Model_config.py) | 理解模型配置加载 | ⭐ |
 | [01_sync_chat.py](01_sync_chat.py) | 同步调用 LLM | ⭐ |
 | [02_stream_chat.py](02_stream_chat.py) | 流式调用 + TTFT/TPS | ⭐⭐ |
 | [03_async_chat.py](03_async_chat.py) | 异步并发调用 | ⭐⭐ |

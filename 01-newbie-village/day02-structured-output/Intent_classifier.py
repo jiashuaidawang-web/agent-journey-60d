@@ -1,16 +1,16 @@
 """
 ================================================================================
-Day 2 - 意图分类器 | 01_intent_classifier.py
+Day 2 - 意图分类器 | Intent_classifier.py
 ================================================================================
 
 【学习目标】
 实现 IntentClassifier：输入自然语言 → 输出结构化意图
 
 【前置知识】
-- 00_pydantic_models.py（Pydantic 模型）
+- pydantic_models.py（Pydantic 模型）
 
 【操作步骤】
-1. 运行: python 01_intent_classifier.py "帮我分析贵州茅台"
+1. 运行: python Intent_classifier.py "帮我分析贵州茅台"
 2. 观察输出：意图类型 + 实体 + 置信度
 
 【预期输出】
@@ -41,10 +41,11 @@ import json
 import sys
 from pathlib import Path
 
+# 添加项目根目录到 path，以便导入 utils 模块
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 from pydantic_models import IntentResult
-from model_config import ModelConfig
+from utils.Model_config import ModelConfig
 
 
 def classify_intent(user_input: str) -> IntentResult:

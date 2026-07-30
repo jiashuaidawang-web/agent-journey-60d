@@ -199,7 +199,7 @@ cp .env.example .env
 ```bash
 # 从 Day 1 开始
 cd 01-newbie-village/day01-llm-foundation/
-cat README.md  # 阅读任务单
+cat README_60.md  # 阅读任务单
 python sync_chat.py  # 运行代码
 ```
 

@@ -73,7 +73,7 @@ python 00_xxx.py
 python 01_xxx.py
 
 # 检查 README 学习总结是否填写
-head -20 README.md
+head -20 README_60.md
 
 # 检查 99-boss-answer.md 是否完成
 grep -c "^## " 99-boss-answer.md  # 应该 >= 5
